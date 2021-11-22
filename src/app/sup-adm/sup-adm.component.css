@@ -1,0 +1,8 @@
+table{
+    border-collapse: collapse;
+}
+thead th,tfoot td{
+    background-color: aquamarine;
+    color: beige;
+    text-transform: uppercase;
+}
