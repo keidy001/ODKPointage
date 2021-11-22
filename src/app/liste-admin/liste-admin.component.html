@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">identifiant</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listData">
+        <!-- <th scope="row">{{item.id}}</th> -->
+        <td>{{item.nom}}</td>
+        <td>{{item.prenom}}</td>
+        <td>{{item.email}}</td>
+        <!-- <th > <i (click)="deleteStudent(item.id)"><img src="./assets/trash.svg" alt=""></i>  &nbsp;
+<a routerLink="/update/{{item.id}}"><img src="./assets/pencil-square.svg" alt=""></a>
+        </th> -->
+      </tr>
+      
+    </tbody>
+  </table>
