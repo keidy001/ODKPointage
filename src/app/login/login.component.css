@@ -1,0 +1,65 @@
+#all{
+    background-image : url("../../assets/images/font.jpg");
+    background-size: cover;
+    height:655px;
+} 
+#box{
+    padding-top: 4%;
+    width: 450px;
+    height:500px;
+    position: absolute;
+    top: 10%;
+    left: 50%; 
+    background-color:rgba(0, 0, 0, 0.5) ; 
+    border-radius: 40px 40px 40px 40px;
+}
+
+    .log input, .pass input{
+        margin-left:6% ;
+        color:white;
+        font-size:35px;
+        width: 370PX;
+        float:left;
+        background: none;
+        margin-bottom:35px;
+        border: solid white 1px;
+    }
+    .button{
+        margin-left:6% ;
+        color:white;
+        width:370PX;
+        background:none;
+        padding:8px; 
+        font-size : 25px;
+        cursor:pointer;
+        padding-left: 27px;
+    }
+
+    form{
+        /* position: absolute; */
+        top: 30%;
+    left: 8%; 
+    }
+    h1{
+        padding-left:35%;
+        color: aliceblue;
+    }
+
+    #image2{
+        width: 250px;
+        position: absolute;
+        top:5px;
+        right:0px;
+
+    }
+    #image1{
+        /* position: absolute; */
+        margin-top: 10%;
+        width:700px;
+
+        
+    }
+    ::placeholder {
+        font-size: 20px;
+        text-align: center;
+      }
