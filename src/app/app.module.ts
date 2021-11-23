@@ -7,6 +7,12 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
+import { ListUsersComponent } from './Utilisateur/list-users/list-users.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListAdminComponent } from './Admin/list-admin/list-admin.component';
+import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
+
 
 
 @NgModule({
@@ -15,11 +21,18 @@ import { LoginComponent } from './login/login.component';
     AccueilComponent,
     HeaderComponent,
     SidebarComponent,
-    LoginComponent
+    LoginComponent,
+    ListUsersComponent,
+    ListAdminComponent,
+    AddAdminComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   
   ],
   providers: [],

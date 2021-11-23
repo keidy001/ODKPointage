@@ -94,9 +94,35 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/myStyle/assets/plugins/simple-line-icons/simple-line-icons.min.css" ,
+"node_modules/myStyle/assets/plugins/simple-line-icons/simple-line-icons.min.css",
+"node_modules/myStyle/assets/plugins/font-awesome/css/font-awesome.min.css",
+"node_modules/myStyle/assets/plugins/bootstrap/css/bootstrap.min.css",
+"node_modules/myStyle/assets/plugins/material/material.min.css",
+"node_modules/myStyle/assets/css/material_style.css",
+"node_modules/myStyle/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" ,
+"node_modules/myStyle/assets/css/pages/animate_page.css",
+"node_modules/myStyle/assets/css/style.css",
+"node_modules/myStyle/assets/css/plugins.min.css",
+"node_modules/myStyle/assets/css/responsive.css",
+"node_modules/myStyle/assets/css/theme-color.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+                "node_modules/myStyle/assets/plugins/jquery/jquery.min.js",
+  "node_modules/myStyle/assets/plugins/popper/popper.min.js",
+  "node_modules/myStyle/assets/plugins/jquery-blockui/jquery.blockui.min.js",
+  "node_modules/myStyle/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
+  "node_modules/myStyle/assets/plugins/bootstrap/js/bootstrap.min.js",
+  "node_modules/myStyle/assets/js/app.js",
+  "node_modules/myStyle/assets/js/layout.js",
+  "node_modules/myStyle/assets/js/theme-color.js",
+  "node_modules/myStyle/assets/plugins/datatables/jquery.dataTables.min.js",
+  "node_modules/myStyle/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js",
+   "node_modules/myStyle/assets/js/pages/table/table_data.js",
+  "node_modules/myStyle/assets/plugins/material/material.min.js",
+  "node_modules/myStyle/assets/js/pages/ui/animations.js"
+            ]
           }
         }
       }
