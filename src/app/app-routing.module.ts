@@ -6,6 +6,7 @@ import { ListUsersComponent } from './Utilisateur/list-users/list-users.componen
 import { AddUsersComponent } from './Utilisateur/add-users/add-users.component';
 import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
 import { ListAdminComponent } from './Admin/list-admin/list-admin.component';
+import { UpdateAdminComponent } from './Admin/update-admin/update-admin.component';
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent},
   { path: 'login',component: LoginComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'addUsers', component:AddUsersComponent},
   { path: 'addAdmin', component:AddAdminComponent},
   { path: 'listAdmins', component: ListAdminComponent},
+  { path: 'updateAdmin/:id', component:UpdateAdminComponent},
   { path: '', redirectTo: '/login', pathMatch:'full'},
  
 ];

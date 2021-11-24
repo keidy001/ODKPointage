@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListAdminComponent } from './Admin/list-admin/list-admin.component';
 import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
+import { UpdateAdminComponent } from './Admin/update-admin/update-admin.component';
 
 
 
@@ -25,6 +26,7 @@ import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
     ListUsersComponent,
     ListAdminComponent,
     AddAdminComponent,
+    UpdateAdminComponent,
  
   ],
   imports: [
