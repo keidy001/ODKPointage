@@ -8,6 +8,7 @@ export class UsersService {
 
   url='http://localhost:8080/api';
   
+  
 
   constructor(
     private http : HttpClient)
@@ -27,6 +28,21 @@ export class UsersService {
     AddAdmin(data : any){
       console.log(data)
       return this.http.post(this.url+"/admin/ajout_admin", data);
+
+    }
+    updateAdmin(id: number,data : any){
+      return this.http.put(`${this.url+"/updateApprenant"}/${id}`,data);
+    }
+    getAllPromo(){
+      return this.http.get(this.url+"/promotion/afficherpromotion");
+    }
+    deletePromo(id : any){
+       return this.http.delete(`${this.url+"/promotion/supprimer"}/${id}`);
+      // return this.http.delete(this.url+"/promotion/supprimer"+id,{responseType:'text'});
+    }
+    Addpromo(data : any){
+      console.log(data)
+      return this.http.post(this.url+"/promotion/ajouter", data);
 
     }
   }
