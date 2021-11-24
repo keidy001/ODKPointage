@@ -206,28 +206,28 @@
                                 </ul></div>
                         </div>
                         <div class="card-body" id="bar-parent2">
-                            <form  id="form_sample_2" class="form-horizontal" novalidate="novalidate">
+                            <form  id="form_sample_2" class="form-horizontal">
                                 <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="prenom">Prénom</label>
-                                <input type="text" class="form-control" name="prenom">
+                                <input type="text" class="form-control" [(ngModel)]="prenom" name="prenom">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="nom">Nom</label>
-                                <input type="text" class="form-control" name="nom">
+                                <input type="text" class="form-control" [(ngModel)]="nom" name="nom">
                             </div>
                      </div>
                  <div class="form-row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email">
+                            <input type="email" class="form-control" [(ngModel)]="email" name="email">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="adresse">Adresse</label>
-                            <input type="text" class="form-control" name="adresse">
+                            <input type="text" class="form-control" [(ngModel)]="adresse" name="adresse">
                         </div>                                          
                          </div>         
                        </div>
@@ -235,7 +235,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="profile">Profile</label>
-                            <select id="inputState" class="form-control" name="profile">
+                            <select  id ="profile" class="form-control" [(ngModel)]="profile" name="profile">
                                 <option></option>
                                 <option value="1">SuperAdmin</option>
                                 <option value="2">Admin</option>
@@ -245,7 +245,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="telephone">Téléphone</label>
-                            <input type="tel" class="form-control" id="tel" name="telephone">
+                            <input type="tel" class="form-control" id="tel" [(ngModel)]="telephone" name="telephone">
                         </div>
                      </div>            
                        </div>
@@ -253,11 +253,11 @@
                        <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="login">Login</label>
-                    <input type="text" class="form-control"  name="login">
+                    <input type="text" class="form-control" [(ngModel)]="login" name="login">
                   </div>
                  <div class="form-group col-md-6">
                     <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control"  name="password">
+                    <input type="password" class="form-control" [(ngModel)]="motDePass" name="motDePass">
                   </div>
                   </div>
             
@@ -265,7 +265,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="etat">Etat</label>
-                        <select id="inputState" class="form-control" name="etat">
+                        <select id="inputState" class="form-control" [(ngModel)]="etat" name="etat">
                             <option></option>
                             <option value="ACTIVER">Activer</option>
                             <option value="DESACTIVER">Désactiver</option>
@@ -279,7 +279,7 @@
                 <div class="offset-md-3 col-md-9" style="padding: 30px;">
                 <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>
               
-                     <button type="submit" class="btn btn-success ms-5">Valider</button>
+                     <button type="submit" class="btn btn-success ms-5" (click)="AjouAdmin()">Valider</button>
                     </div>
                     </div>
                                 

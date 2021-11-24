@@ -15,8 +15,18 @@ export class UsersService {
     getAllAdmin(){
       return this.http.get(this.url+"/admin/afficher_List_admin");
     }
-
+    getProfile(){
+      return this.http.get(this.url+"/admin/afficher_List_admin");
+    }
     deleteAdmin(id:any){
         return this.http.delete(this.url+"/admin/supprimerAdmin/"+id,{responseType:'text'});
+    }
+    login(login :String,password : String){
+      return this.http.get(this.url+"/admin/authentificationAdmin?login="+login+"&password="+password)
+    }
+    AddAdmin(data : any){
+      console.log(data)
+      return this.http.post(this.url+"/admin/ajout_admin", data);
+
     }
   }
