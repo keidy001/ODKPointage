@@ -9,7 +9,7 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+loginInfo:any;
   constructor(private service: UsersService, public router: Router) { }
 
   ngOnInit(): void {
@@ -17,8 +17,12 @@ export class LoginComponent implements OnInit {
   onLogin(form :NgForm){
     this.service.login(form.value["username"],form.value["password"]).subscribe((res)=>{
       if(res){
+
         console.log(res);
-        this.router.navigate(["/accueil"])
+        this.loginInfo = res;
+        this.router.navigate(["/accueil"]);
+        console.log(this.loginInfo);
+        localStorage.setItem('isLogin', JSON.stringify(this.loginInfo));
       }else{
         this.router.navigate(["/login"])
         console.log("login non connecter");
