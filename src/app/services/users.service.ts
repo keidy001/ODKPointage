@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -30,9 +29,8 @@ export class UsersService {
       return this.http.post(this.url+"/admin/ajout_admin", data);
 
     }
-    updateAdmin(id: number,data : any){
-      return this.http.put(`${this.url+"/updateApprenant"}/${id}`,data);
-    }
+
+   
     getAllPromo(){
       return this.http.get(this.url+"/promotion/afficherpromotion");
     }
@@ -45,4 +43,18 @@ export class UsersService {
       return this.http.post(this.url+"/promotion/ajouter", data);
 
     }
+    detailAdmin(id:any){
+      return this.http.get(this.url +"/admin/afficherAdminById/"+ id);
+    }
+    updateAdmin(id: number, data: any){
+      return this.http.put(this.url+"/admin/modifierAdmin/"+ id, data);
+
+    }
+    updatePromo(id: number, data: any){
+      return this.http.put(this.url+"/promotion/modifier/"+ id, data);
   }
+  detailPromo(id:any){
+    return this.http.get(this.url +"/promotion/afficherparid/"+ id);
+  }
+}
+  

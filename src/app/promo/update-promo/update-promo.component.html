@@ -1,3 +1,4 @@
+
   <!-- start header -->
   <div class="page-header navbar navbar-fixed-top">
     <div class="page-header-inner ">
@@ -128,13 +129,13 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="email_inbox.html" class="nav-link ">
+                            <a href="/promo" class="nav-link ">
                               <i class="material-icons">add</i>
                                 <span class="title">Ajout Utilisateur</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="email_view.html" class="nav-link ">
+                            <a href="/listepromo" class="nav-link ">
                               <i class="material-icons">assignment</i>
                                 <span class="title">   Liste Utilisateur</span>
                             </a>
@@ -151,13 +152,13 @@
                   </a>
                   <ul class="sub-menu">
                       <li class="nav-item">
-                          <a href="/promo" class="nav-link ">
+                          <a href="email_inbox.html" class="nav-link ">
                             <i class="material-icons">add</i>
                               <span class="title">  Ajout Promotion</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="/listepromo" class="nav-link ">
+                          <a href="email_view.html" class="nav-link ">
                             <i class="material-icons">assignment</i>
                               <span class="title">  Liste Promotion</span>
                           </a>
@@ -198,88 +199,87 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Nouveau Administrateur</header>
+                            <header >Modification promo </header>
                                 <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" data-mdl-for="panel-button2" data-upgraded=",MaterialMenu,MaterialRipple">
                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">assistant_photo</i>Action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">print</i>Another action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">favorite</i>Something else here<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
                                 </ul></div>
                         </div>
+                        
                         <div class="card-body" id="bar-parent2">
-                            <form  id="form_sample_2" class="form-horizontal">
+                            <form  id="form_sample_2" class="form-horizontal" novalidate="novalidate" #editForm="ngForm">
                                 <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="prenom">Prénom</label>
-                                <input type="text" class="form-control" [(ngModel)]="prenom" name="prenom">
+                                <label for="prenom">Nom</label>
+                                <input type="text" class="form-control" name="nom" [(ngModel)]="promoData.nom">
                             </div>
+                        
                             <div class="form-group col-md-6">
-                                <label for="nom">Nom</label>
-                                <input type="text" class="form-control" [(ngModel)]="nom" name="nom">
+                                <label for="nom">Année</label>
+                                <input type="text" class="form-control" name="annee" [(ngModel)]="promoData.annee">
                             </div>
                      </div>
                  <div class="form-row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" [(ngModel)]="email" name="email">
+                            <label for="email">date debut</label>
+                            <input type="email" class="form-control" name="dateDebut" [(ngModel)]="promoData.dateDebut">
                         </div>
                     </div>
+                
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="adresse">Adresse</label>
-                            <input type="text" class="form-control" [(ngModel)]="adresse" name="adresse">
+                            <label for="adresse">date fin</label>
+                            <input type="text" class="form-control" name="dateFin" [(ngModel)]="promoData.dateFin">
                         </div>                                          
                          </div>         
-                       </div>
-                       <div class="form-row">
+                      
+                    
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="profile">Profile</label>
-                            <select  id ="profile" class="form-control" [(ngModel)]="profile" name="profile">
-                                <option></option>
-                                <option value="1">SuperAdmin</option>
-                                <option value="2">Admin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" class="form-control" id="tel" [(ngModel)]="telephone" name="telephone">
+                            <label for="telephone">total Apprenants</label>
+                            <input type="tel" class="form-control" id="tel" name="totalApprenants" [(ngModel)]="promoData.totalApprenants">
                         </div>
                      </div>            
-                       </div>
-            
-                       <div class="form-row">
+                       
                   <div class="form-group col-md-6">
-                    <label for="login">Login</label>
-                    <input type="text" class="form-control" [(ngModel)]="login" name="login">
+                    <label >Total Des Femmes</label>
+                    <input type="text" class="form-control"  name="nombreFemmes" [(ngModel)]="promoData.nombreFemmes">
                   </div>
-                 <div class="form-group col-md-6">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control" [(ngModel)]="motDePass" name="motDePass">
-                  </div>
-                  </div>
-            
-            <div class="form-row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="etat">Etat</label>
-                        <select id="inputState" class="form-control" [(ngModel)]="etat" name="etat">
-                            <option></option>
-                            <option value="ACTIVER">Activer</option>
-                            <option value="DESACTIVER">Désactiver</option>
-                        </select>
-                    </div>
                 </div>
-              
-            </div>
+                  <div class="form-row">
+                 <div class="form-group col-md-6">
+                    <label >Total Des Hommes</label>
+                    <input type="text" class="form-control"  name="nombreHommes" [(ngModel)]="promoData.nombreHommes">
+                  </div>
+                
+                    
+                    <div class="col-md-6 ">
+                        <div class="form-group">
+                            <label for="telephone">Horaire Debut Journee</label>
+                            <input type="tel" class="form-control" id="tel"  name="horaireDebutJournee" [(ngModel)]="promoData.horaireDebutJournee">
+                        </div>
+                     </div>  
+                               
+                      
+                    
+                        <div class="col-md-6 ">
+                            <div class="form-group justify-content-center">
+                                <label for="telephone">Horaire Fin Journee</label>
+                                <input type="tel" class="form-control" id="tel"  name="horaireDebutJournee" [(ngModel)]="promoData.horaireFinJournee">
+                            </div>
+                         </div>  
+                                   
+                           </div>
+            
+
              
             <div class="form-group">
                 <div class="offset-md-3 col-md-9" style="padding: 30px;">
                 <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>
               
-                     <button type="submit" class="btn btn-success ms-5" (click)="AjouAdmin()">Valider</button>
+                     <button type="submit" class="btn btn-success ms-5" (click)="onUpdate()">Valider</button>
                     </div>
                     </div>
                                 

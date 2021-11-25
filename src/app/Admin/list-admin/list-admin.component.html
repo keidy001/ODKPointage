@@ -152,13 +152,13 @@
                           </a>
                           <ul class="sub-menu">
                               <li class="nav-item">
-                                  <a href="email_inbox.html" class="nav-link ">
+                                  <a href="/promo" class="nav-link ">
                                     <i class="material-icons">add</i>
                                       <span class="title">  Ajout Promotion</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="email_view.html" class="nav-link ">
+                                  <a href="/listepromo" class="nav-link ">
                                     <i class="material-icons">assignment</i>
                                       <span class="title">  Liste Promotion</span>
                                   </a>
@@ -267,7 +267,7 @@
 									<span class="label label-sm label-success">{{admin.etat}} </span>
 								</td>
 								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
+									<a class="btn btn-tbl-edit btn-xs" routerLink="/updateAdmin/{{admin.id}}">
 										<i class="fa fa-pencil"></i>
 									</a>
 									<button class="btn btn-tbl-delete btn-xs" (click)="deleteAdmin(admin.id)">

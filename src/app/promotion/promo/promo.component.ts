@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-promo',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PromoComponent implements OnInit {
 
-  constructor(private service: UsersService) { }
+  constructor(private service: UsersService, public router:Router) { }
   addPromotion = new FormGroup({ 
     annee : new FormControl(''),
     nom : new FormControl(''),
@@ -28,7 +29,10 @@ export class PromoComponent implements OnInit {
   SaveData(){
     // console.log(this.addStudent.value);
     this.service.Addpromo(this.addPromotion.value).subscribe((result)=>{
-      console.log(result);
+      console.log(result)
+      this.router.navigateByUrl("listepromo")
+
+
     })
   }
 

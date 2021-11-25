@@ -151,13 +151,13 @@
                   </a>
                   <ul class="sub-menu">
                       <li class="nav-item">
-                          <a href="email_inbox.html" class="nav-link ">
+                          <a href="/promo" class="nav-link ">
                             <i class="material-icons">add</i>
                               <span class="title">  Ajout Promotion</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="email_view.html" class="nav-link ">
+                          <a href="/listepromo" class="nav-link ">
                             <i class="material-icons">assignment</i>
                               <span class="title">  Liste Promotion</span>
                           </a>
@@ -198,7 +198,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Nouveau Administrateur</header>
+                            <header>Nouveau Promotion</header>
                                 <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" data-mdl-for="panel-button2" data-upgraded=",MaterialMenu,MaterialRipple">
                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">assistant_photo</i>Action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">print</i>Another action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
@@ -210,66 +210,62 @@
                                 <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="prenom">Nom</label>
-                                <input type="text" class="form-control" name="prenom">
+                                <input type="text" class="form-control" formControlName="nom">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="nom">Année</label>
-                                <input type="text" class="form-control" name="nom">
+                                <input type="text" class="form-control" formControlName="annee">
                             </div>
                      </div>
                  <div class="form-row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email">
+                            <label for="email">Date de debut</label>
+                            <input type="email" class="form-control" formControlName="dateDebut">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="adresse">Adresse</label>
-                            <input type="text" class="form-control" name="adresse">
+                            <label for="adresse">Date Fin</label>
+                            <input type="text" class="form-control" formControlName="dateFin">
                         </div>                                          
                          </div>         
                        </div>
                        <div class="form-row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="profile">Profile</label>
-                            <select id="inputState" class="form-control" name="profile">
-                                <option></option>
-                                <option value="1">SuperAdmin</option>
-                                <option value="2">Admin</option>
-                            </select>
+                            <label for="profile">Total des ApprenantsS</label>
+
+                                <input type="text" class="form-control" formControlName="totalApprenants">
+                            
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" class="form-control" id="tel" name="telephone">
+                            <label for="telephone">Nombre des hommes</label>
+                            <input type="text" class="form-control" id="tel" formControlName="nombreHommes">
                         </div>
                      </div>            
                        </div>
             
                        <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="login">Login</label>
-                    <input type="text" class="form-control"  name="login">
+                    <label for="">Nombre des Femmes</label>
+                    <input type="text" class="form-control"  formControlName="nombreFemmes">
                   </div>
                  <div class="form-group col-md-6">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control"  name="password">
+                    <label for="">Horaire Debut Journée</label>
+                    <input type="text" class="form-control"  formControlName="horaireDebutJournee">
                   </div>
                   </div>
             
             <div class="form-row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="etat">Etat</label>
-                        <select id="inputState" class="form-control" name="etat">
-                            <option></option>
-                            <option value="ACTIVER">Activer</option>
-                            <option value="DESACTIVER">Désactiver</option>
-                        </select>
+                        <label for="etat">Horaire Fin Journée</label>
+                       
+                            <input type="text" class="form-control"  formControlName="horaireFinJournee"> 
+                           
                     </div>
                 </div>
               

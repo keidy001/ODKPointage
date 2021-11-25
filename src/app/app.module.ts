@@ -14,6 +14,10 @@ import { ListAdminComponent } from './Admin/list-admin/list-admin.component';
 import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
 import { PromoComponent } from './promotion/promo/promo.component';
 import { ListePromoComponent } from './promotion/liste-promo/liste-promo.component';
+import { UpdateAdminComponent } from './Admin/update-admin/update-admin.component';
+import { UpdatePromoComponent } from './promo/update-promo/update-promo.component';
+import { DetailPromoComponent } from './promo/detail-promo/detail-promo.component';
+
 
 
 
@@ -29,6 +33,10 @@ import { ListePromoComponent } from './promotion/liste-promo/liste-promo.compone
     AddAdminComponent,
     PromoComponent,
     ListePromoComponent,
+
+    UpdateAdminComponent,
+      UpdatePromoComponent,
+      DetailPromoComponent,
  
   ],
   imports: [

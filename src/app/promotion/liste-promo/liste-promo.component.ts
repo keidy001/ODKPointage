@@ -20,9 +20,10 @@ export class ListePromoComponent implements OnInit {
     })
   }
   deletepromo(id : any):void{
+    if(confirm("Voulez vous supprimer cette promo ?")){
   this.servicePromo.deletePromo(id).subscribe((data)=>{
     this.listerPromo();
   });
   }
 
-}
+}}

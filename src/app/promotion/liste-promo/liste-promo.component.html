@@ -152,13 +152,13 @@
                           </a>
                           <ul class="sub-menu">
                               <li class="nav-item">
-                                  <a href="email_inbox.html" class="nav-link ">
+                                  <a href="/promo" class="nav-link ">
                                     <i class="material-icons">add</i>
                                       <span class="title">  Ajout Promotion</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="email_view.html" class="nav-link ">
+                                  <a href="/listepromo" class="nav-link ">
                                     <i class="material-icons">assignment</i>
                                       <span class="title">  Liste Promotion</span>
                                   </a>
@@ -212,7 +212,7 @@
 					<div class="row p-b-20">
 						<div class="col-md-6 col-sm-6 col-6">
 							<div class="btn-group">
-								<a href="/addUsers" id="addRow" class="btn btn-info">
+								<a href="/promo" id="addRow" class="btn btn-info">
 									Ajouter  <i class="fa fa-plus"></i>
 								</a>
 							</div>
@@ -254,20 +254,35 @@
 							</tr>
 						</thead>
 						<tbody >
+							
 							<tr class="odd gradeX"  *ngFor ="let promo Of listPromo">
-								<td class="user-circle-img">
+								
+								<td class="user-circle-img"><a routerLink="/detailpromo/{{promo.id}}">
 										<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
-								</td>
-								<td class="center">{{promo.nom}}</td>
-								<td class="center">{{promo.annee}}</td>
-								<td class="center">{{promo.dateDebut}}</td>
-                                <td class="center">{{promo.dateFin}}</td>
-                                <td class="center">{{promo.totalApprenants}}</td>
-
+								</a></td>
 								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
+								<a routerLink="/detailpromo/{{promo.id}}">{{promo.nom}}</a>
+								</td>
+								<td class="center">
+									<a routerLink="/detailpromo/{{promo.id}}">{{promo.annee}}</a>
+								</td>
+								<td class="center">
+									<a routerLink="/detailpromo/{{promo.id}}">{{promo.dateDebut}}</a>
+								</td>
+                                <td class="center">
+									<a routerLink="/detailpromo/{{promo.id}}">{{promo.dateFin}}
+								</a>
+								</td>
+                                <td class="center">
+									<a routerLink="/detailpromo/{{promo.id}}">{{promo.totalApprenants}}</a>
+								</td>
+									
+								<td class="center">
+
+									<a class="btn btn-tbl-edit btn-xs" routerLink="/updatePromo/{{promo.id}}">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+									
 									<button class="btn btn-tbl-delete btn-xs" (click)="deletepromo(promo.id)">
 										<i class="fa fa-trash-o "></i>
 									</button>
