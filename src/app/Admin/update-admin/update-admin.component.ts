@@ -13,6 +13,7 @@ export class UpdateAdminComponent implements OnInit {
   adminData: any;
   user: any;
   id: any;
+  loginData:any;
 
   constructor(public service: UsersService,public  route: ActivatedRoute, public router : Router) { }
 
@@ -21,14 +22,16 @@ export class UpdateAdminComponent implements OnInit {
     this.service.detailAdmin(this.id).subscribe(data=>{
       console.log(data);
       this.adminData = data;
+      this.loginData=JSON.parse(localStorage["isLogin"]);
     })
     console.log(this.id);
   }
   onUpdate(){
-    this.service.updateAdmin(this.adminData.id, this.adminData).subscribe(
+    let userId= this.loginData.id;
+    this.service.updateAdmin(this.adminData.id, userId, this.adminData).subscribe(
       data=>{
         console.log(data);
-      this.service.updateAdmin(this.id, this.adminData).subscribe(
+      this.service.updateAdmin(this.id,userId, this.adminData).subscribe(
         (data:any)=>{
         console.log(data);
         this.router.navigateByUrl("listAdmins");

@@ -264,6 +264,16 @@
             <div class="form-row">
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <select id="inputStat" class="form-control" [(ngModel)]="adminData.genre" name="genre">
+                            <option></option>
+                            <option value="HOMME">Homme</option>
+                            <option value="FEMME">Femme</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="etat">Etat</label>
                         <select id="inputState" class="form-control" name="etat" [(ngModel)]="adminData.etat">
                             <option></option>
@@ -274,7 +284,8 @@
                 </div>
               
             </div>
-             
+            <input type="hidden" class="form-control" [(ngModel)]= "loginData.id" name="userId"  >
+ 
             <div class="form-group">
                 <div class="offset-md-3 col-md-9" style="padding: 30px;">
                 <button type="reset" class="btn btn-danger mr-5" routerLink="/listAdmins">Retour</button>

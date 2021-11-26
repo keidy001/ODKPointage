@@ -86,7 +86,7 @@
                                         <img src="assets/img/dp.jpg" class="img-responsive" alt=""> </div>
                                 </div>
                                 <div class="profile-usertitle">
-                                    <div class="sidebar-userpic-name"> John Deo </div>
+                                    <div class="sidebar-userpic-name"> {{loginData.nom}} </div>
                                     <div class="profile-usertitle-job"> Manager </div>
                                 </div>
                                 <div class="sidebar-userpic-btn">
@@ -264,6 +264,17 @@
             <div class="form-row">
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <select id="inputState" class="form-control" ngModel name="genre">
+                            <option></option>
+                            <option value="HOMME">Homme</option>
+                            <option value="FEMME">Femme</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="etat">Etat</label>
                         <select id="inputState" class="form-control" ngModel name="etat">
                             <option></option>
@@ -275,6 +286,8 @@
               
             </div>
              
+            <input type="hidden" class="form-control" [(ngModel)]= "loginData.id" name="userId"  >
+
             <div class="form-group">
                 <div class="offset-md-3 col-md-9" style="padding: 30px;">
                 <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>

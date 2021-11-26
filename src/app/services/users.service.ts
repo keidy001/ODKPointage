@@ -27,7 +27,8 @@ export class UsersService {
     }
 
     addAdmin(data:any){
-      return this.http.post(this.url+"/admin/ajout_admin", data, {responseType:"text"});
+      console.log(data.userId);
+      return this.http.post(this.url+"/admin/ajout_admin/"+data.userId, data, {responseType:"text"});
     }
 
     deleteAdmin(id:any){
@@ -36,8 +37,8 @@ export class UsersService {
     detailAdmin(id:any){
       return this.http.get(this.url +"/admin/afficherAdminById/"+ id);
     }
-    updateAdmin(id: number, data: any){
-      return this.http.put(this.url+"/admin/modifierAdmin/"+ id, data);
+    updateAdmin(id: number, userId:number, data: any){
+      return this.http.put(this.url+"/admin/modifierAdmin/"+id+"&"+userId, data);
     }
 
 

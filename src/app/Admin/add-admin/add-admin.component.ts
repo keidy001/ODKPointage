@@ -16,12 +16,15 @@ export class AddAdminComponent implements OnInit {
   user: any;
   id: any;
   chaine : string;
+  loginData: any;
 
   constructor(public service: UsersService, public  route: ActivatedRoute, public router : Router) { }
 
   ngOnInit(): void {
 
+
     console.log(this.adminData);
+    this.loginData=JSON.parse(localStorage["isLogin"]);
 
   }
 
