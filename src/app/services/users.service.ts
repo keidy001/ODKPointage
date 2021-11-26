@@ -12,6 +12,16 @@ export class UsersService {
   constructor(
     private http : HttpClient)
      { }
+
+     //-------------------------------------------------------Login APi service --------------
+
+     login(login :String,password : String){
+      return this.http.get(this.url+"/admin/authentificationAdmin?login="+login+"&password="+password)
+    }
+
+
+    //-------------------------------------------------------Admin  APi service --------------
+
     getAllAdmin(){
       return this.http.get(this.url+"/admin/afficher_List_admin");
     }
@@ -36,5 +46,8 @@ export class UsersService {
     getAllUsers(){
       return this.http.get(this.url+"/utilisateurs/afficher_list_utilisateur");
     }
+
+
+
 
   }

@@ -28,7 +28,7 @@ export class AddAdminComponent implements OnInit {
   ajouterAdmin(addForm: NgForm){
     //this.chaine = addForm.value.profile;
     var obj: { [id: string]: any} = {};
-
+   
      obj.id = addForm.value.profile; 
      addForm.value.profile = obj;
 
@@ -37,7 +37,11 @@ export class AddAdminComponent implements OnInit {
     this.service.addAdmin(addForm.value).subscribe(
       
       (data)=>{
-        console.log("hello world" +data)
+        this.router.navigateByUrl("listAdmins");
+        console.log("hello world" +data);
+       
+        
+        
       }
     )
   }

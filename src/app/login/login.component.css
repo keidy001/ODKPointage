@@ -2,14 +2,13 @@
     background-image : url("../../assets/images/font.jpg");
     background-size: cover;
     height:655px;
+    padding: 5%;
 } 
 #box{
     padding-top: 4%;
     width: 450px;
     height:500px;
-    position: absolute;
-    top: 10%;
-    left: 50%; 
+    margin:auto;
     background-color:rgba(0, 0, 0, 0.5) ; 
     border-radius: 40px 40px 40px 40px;
 }
@@ -17,12 +16,13 @@
     .log input, .pass input{
         margin-left:6% ;
         color:white;
-        font-size:35px;
+        font-size:20px;
         width: 370PX;
         float:left;
         background: none;
         margin-bottom:35px;
         border: solid white 1px;
+        
     }
     .button{
         margin-left:6% ;
