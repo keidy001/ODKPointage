@@ -9,6 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UpdateAdminComponent implements OnInit {
 
+
   adminData: any;
   user: any;
   id: any;

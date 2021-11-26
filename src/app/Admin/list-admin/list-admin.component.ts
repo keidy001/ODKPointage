@@ -22,10 +22,12 @@ listAdmin:any =[]
     })
   }
   deleteAdmin(id:any):void{
+    if(confirm("Voulez-vous supprimer ??")){
    this.serviceAdmin.deleteAdmin(id).subscribe((data)=>{
      console.log(data); 
      this.listerAdmin();
    });
+  }
    
   }
  

@@ -5,13 +5,13 @@
     </div>
     <div id="box" class="row md-4">
         <h1>Bienvenu</h1>
-        <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
+        <form>
         <div class="log">
-            <input type="text" placeholder="Veuillez saisir votre Login" name="username" ngModel required>
+            <input type="email" placeholder="Veuillez saisir votre adresse e-mail" required>
         </div>
 
         <div class="pass">
-            <input type="password" placeholder="Veuillez saisir votre mot de passe" name="password" ngModel required>
+            <input type="password" placeholder="Veuillez saisir votre mot de passe" required>
         </div>
 
         <div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Admin } from 'src/app/services/serviceInterface';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -8,47 +10,36 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./add-admin.component.css']
 })
 export class AddAdminComponent implements OnInit {
-  prenom: any;
-  nom: any; 
-  adresse: any; 
-  etat: any; 
-  email: any; 
-  telephone: any; 
-  profile: any;  
-  login: any; 
-  motDePass: any;   
-  constructor(private service: UsersService) { }
-  // addAdmin= new FormGroup({
-  //   prenom: new FormControl(''),
-  //   nom: new FormControl(''),
-  //   adresse: new FormControl(''),
-  //   etat: new FormControl(''),
-  //   email: new FormControl(''),
-  //   telephone: new FormControl(''),
-  //   profile: new FormControl(),
-  //   login: new FormControl(''),
-  //   motDePass: new FormControl('')
-  // })
+
+  adminData: any;
+  ngForm: FormGroup;
+  user: any;
+  id: any;
+  chaine : string;
+
+  constructor(public service: UsersService, public  route: ActivatedRoute, public router : Router) { }
 
   ngOnInit(): void {
+
+    console.log(this.adminData);
+
   }
-   AjouAdmin(){
-     let addAdmin = {
-      prenom : this.nom,
-      nom    : this.prenom, 
-      adresse: this.adresse, 
-      etat: this.etat, 
-      email: this.email, 
-      telephone: this.telephone, 
-      profile: {
-        id:this.profile},  
-      login: this.login, 
-      motDePass: this.motDePass, 
-     }
-   this.service.AddAdmin(addAdmin).subscribe((data)=>{
-     console.log("yyyyyyyy"+data);
-     
-    })
-  
-   }
+
+  ajouterAdmin(addForm: NgForm){
+    //this.chaine = addForm.value.profile;
+    var obj: { [id: string]: any} = {};
+
+     obj.id = addForm.value.profile; 
+     addForm.value.profile = obj;
+
+    console.log(JSON.stringify(addForm.value));
+   
+    this.service.addAdmin(addForm.value).subscribe(
+      
+      (data)=>{
+        console.log("hello world" +data)
+      }
+    )
+  }
+
 }

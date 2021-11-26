@@ -10,7 +10,7 @@
                 </div>
                 <!-- logo end -->
 				<ul class="nav navbar-nav navbar-left in">
-					<li><a href="javascript:;" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+					<li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
 				</ul>
                  
                 
@@ -106,13 +106,13 @@
 	                            </a>
 	                            <ul class="sub-menu">
 	                                <li class="nav-item">
-	                                    <a href="email_inbox.html" class="nav-link ">
+	                                    <a href="/addAdmin" class="nav-link ">
                                         <i class="material-icons">add</i>
 	                                        <span class="title">Ajout Admin</span>
 	                                    </a>
 	                                </li>
 	                                <li class="nav-item">
-	                                    <a href="email_view.html" class="nav-link ">
+	                                    <a href="/listAdmins" class="nav-link ">
                                         <i class="material-icons">assignment</i>
 	                                        <span class="title">  Liste Admin</span>
 	                                    </a>
@@ -152,13 +152,13 @@
                           </a>
                           <ul class="sub-menu">
                               <li class="nav-item">
-                                  <a href="/promo" class="nav-link ">
+                                  <a href="email_inbox.html" class="nav-link ">
                                     <i class="material-icons">add</i>
                                       <span class="title">  Ajout Promotion</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="/listepromo" class="nav-link ">
+                                  <a href="email_view.html" class="nav-link ">
                                     <i class="material-icons">assignment</i>
                                       <span class="title">  Liste Promotion</span>
                                   </a>
@@ -212,7 +212,7 @@
 					<div class="row p-b-20">
 						<div class="col-md-6 col-sm-6 col-6">
 							<div class="btn-group">
-								<a href="/addUsers" id="addRow" class="btn btn-info">
+								<a href="/addAdmin" id="addRow" class="btn btn-info">
 									Ajouter  <i class="fa fa-plus"></i>
 								</a>
 							</div>
@@ -258,16 +258,16 @@
 								<td class="user-circle-img">
 										<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
 								</td>
-								<td class="center">{{admin.nom}}</td>
-								<td class="center">{{admin.prenom}}</td>
-								<td class="center">{{admin.telephone}}</td>
-                                <td class="center">{{admin.email}}</td>
-                                <td class="center">{{admin.profile.libelle}}</td>
+								<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.nom}}</span></td>
+								<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.prenom}}</span></td>
+								<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.telephone}}</span></td>
+                                <td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.email}}</span></td>
+                                <td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.profile.libelle}}</span></td>
 								<td class="center">
 									<span class="label label-sm label-success">{{admin.etat}} </span>
 								</td>
 								<td class="center">
-									<a class="btn btn-tbl-edit btn-xs" routerLink="/updateAdmin/{{admin.id}}">
+									<a  class="btn btn-tbl-edit btn-xs" routerLink="/updateAdmin/{{admin.id}}">
 										<i class="fa fa-pencil"></i>
 									</a>
 									<button class="btn btn-tbl-delete btn-xs" (click)="deleteAdmin(admin.id)">

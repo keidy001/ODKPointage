@@ -6,27 +6,17 @@ import { ListUsersComponent } from './Utilisateur/list-users/list-users.componen
 import { AddUsersComponent } from './Utilisateur/add-users/add-users.component';
 import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
 import { ListAdminComponent } from './Admin/list-admin/list-admin.component';
-
-import { PromoComponent } from './promotion/promo/promo.component';
-import { ListePromoComponent } from './promotion/liste-promo/liste-promo.component';
-
+import { DetailAdminComponent } from './Admin/detail-admin/detail-admin.component';
 import { UpdateAdminComponent } from './Admin/update-admin/update-admin.component';
-import { UpdatePromoComponent } from './promo/update-promo/update-promo.component';
-import { DetailPromoComponent } from './promo/detail-promo/detail-promo.component';
-
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent},
   { path: 'login',component: LoginComponent},
   { path: 'listUsers',component:ListUsersComponent},
   { path: 'addUsers', component:AddUsersComponent},
-  { path: 'addAdmin', component:AddAdminComponent},
-  { path: 'promo', component:PromoComponent},
-  { path: 'listepromo', component:ListePromoComponent},
+  { path: 'addAdmin',component:AddAdminComponent},
+  { path: 'detailAdmin/:id',component:DetailAdminComponent},
+  { path: 'updateAdmin/:id',component:UpdateAdminComponent},
   { path: 'listAdmins', component: ListAdminComponent},
-  { path: 'updateAdmin/:id', component:UpdateAdminComponent},
-  { path: 'updatePromo/:id', component:UpdatePromoComponent},
-  { path: 'detailpromo/:id', component: DetailPromoComponent},
-  
   { path: '', redirectTo: '/login', pathMatch:'full'},
  
 ];

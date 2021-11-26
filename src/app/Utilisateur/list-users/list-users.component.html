@@ -201,7 +201,7 @@
 		<div class="col-md-12">
 			<div class="card card-box">
 				<div class="card-head">
-					<header>Liste des Administrateurs</header>
+					<header>Liste des Utlisateurs</header>
 					<div class="tools">
 						<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
 						<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -244,401 +244,42 @@
 						<thead>
 							<tr>
 								<th class="center"></th>
-								<th class="center"> Name </th>
-								<th class="center"> Mobile </th>
+								<th class="center"> Nom </th>
+								<th class="center"> Prenom </th>
 								<th class="center"> Email </th>
-								<th class="center"> Arrive </th>
-								<th class="center"> Depart </th>
-								<th class="center"> Room Type </th>
-								<th class="center"> Payment </th>
+								<th class="center"> Téléphone </th>
+								<th class="center"> Date creation</th>
+								<th class="center"> Date modification </th>
+								<th class="center"> Type </th>
+								<th class="center"> Etat </th>
 								<th class="center"> Action </th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="odd gradeX">
+							<tr class="odd gradeX" *ngFor="let users of listUsers" >
 								<td class="user-circle-img">
 										<img src="assets/img/user/user1.jpg" alt="">
 								</td>
-								<td class="center">Rajesh</td>
-								<td class="center"><a href="tel:4444565756">
-										4444565756 </a></td>
-								<td class="center"><a href="mailto:rajesh@gmail.com ">
-										rajesh@gmail.com </a></td>
-								<td class="center">23/04/2017</td>
-								<td class="center">25/04/2017</td>
-								<td class="center">Single</td>
+								<td class="center">{{users.nom}}</td>
+								<td class="center">{{users.prenom}}</td>
+								<td class="center"><a href="mailto:{{users.email}}">{{users.email}}</a></td>
+								<td class="center">{{users.telephone}}</td>
+								<td class="center">{{users.dateCreation}}</td>
+								<td class="center">{{users.dateModification}}</td>
+								<td class="center">{{users.type}}</td>
 								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user10.jpg" alt="">
-								</td>
-								<td class="center">Pooja Patel</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:pooja@gmail.com">
-										pooja@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Double</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
+									<span class="label label-sm label-success">{{users.etat}} </span>
 								</td>
 								<td class="center">
 									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
 										<i class="fa fa-pencil"></i>
 									</a>
 									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
+										<i class="fa fa-trash-o"></i>
 									</button>
 								</td>
 							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user2.jpg" alt="">
-								</td>
-								<td class="center">Sarah Smith</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:sarah@gmail.com">
-										sarah@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Coutage</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user3.jpg" alt="">
-								</td>
-								<td class="center">John Deo</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:john@gmail.com">
-										john@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Double</td>
-								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user4.jpg" alt="">
-								</td>
-								<td class="center">Jay Soni</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:jay@gmail.com">
-										jay@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Vila</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user5.jpg" alt="">
-								</td>
-								<td class="center">Jacob Ryan</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:jacob@gmail.com">
-										jacob@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Coutage</td>
-								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user6.jpg" alt="">
-								</td>
-								<td class="center">Megha Trivedi</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:megha@gmail.com">
-										megha@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Double</td>
-								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user1.jpg" alt="">
-								</td>
-								<td class="center">Rajesh</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:rajesh@gmail.com">
-										rajesh@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Vila</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user1.jpg" alt="">
-								</td>
-								<td class="center">Rajesh</td>
-								<td class="center"><a href="tel:4444565756">
-										4444565756 </a></td>
-								<td class="center"><a href="mailto:rajesh@gmail.com ">
-										rajesh@gmail.com </a></td>
-								<td class="center">23/04/2017</td>
-								<td class="center">25/04/2017</td>
-								<td class="center">Single</td>
-								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user10.jpg" alt="">
-								</td>
-								<td class="center">Pooja Patel</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:pooja@gmail.com">
-										pooja@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Double</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user2.jpg" alt="">
-								</td>
-								<td class="center">Sarah Smith</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:sarah@gmail.com">
-										sarah@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Coutage</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user3.jpg" alt="">
-								</td>
-								<td class="center">John Deo</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:john@gmail.com">
-										john@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Double</td>
-								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user4.jpg" alt="">
-								</td>
-								<td class="center">Jay Soni</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:jay@gmail.com">
-										jay@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Vila</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user5.jpg" alt="">
-								</td>
-								<td class="center">Jacob Ryan</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:jacob@gmail.com">
-										jacob@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Coutage</td>
-								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user6.jpg" alt="">
-								</td>
-								<td class="center">Megha Trivedi</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:megha@gmail.com">
-										megha@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Double</td>
-								<td class="center">
-									<span class="label label-sm label-success">Paid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
-							<tr class="odd gradeX">
-								<td class="user-circle-img">
-										<img src="assets/img/user/user1.jpg" alt="">
-								</td>
-								<td class="center">Rajesh</td>
-								<td class="center"><a href="tel:444786876">
-										444786876 </a></td>
-								<td class="center"><a href="mailto:rajesh@gmail.com">
-										rajesh@gmail.com </a></td>
-								<td class="center">13/05/2017</td>
-								<td class="center">15/05/2017</td>
-								<td class="center">Vila</td>
-								<td class="center">
-									<span class="label label-sm label-warning">Unpaid </span>
-								</td>
-								<td class="center">
-									<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
-										<i class="fa fa-pencil"></i>
-									</a>
-									<button class="btn btn-tbl-delete btn-xs">
-										<i class="fa fa-trash-o "></i>
-									</button>
-								</td>
-							</tr>
+							
 						</tbody>
 					</table>
 					</div>
