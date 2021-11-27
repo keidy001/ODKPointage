@@ -13,6 +13,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListAdminComponent } from './Admin/list-admin/list-admin.component';
 import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
 import { UpdateAdminComponent } from './Admin/update-admin/update-admin.component';
+import { AddUsersComponent } from './Utilisateur/add-users/add-users.component';
+import { DetailUserComponent } from './listUsers/detail-user/detail-user.component';
+import { UpdateUserComponent } from './Utilisateur/update-user/update-user.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -27,6 +31,11 @@ import { UpdateAdminComponent } from './Admin/update-admin/update-admin.componen
     ListAdminComponent,
     AddAdminComponent,
     UpdateAdminComponent,
+    AddUsersComponent,
+    DetailUserComponent,
+    UpdateUserComponent,
+    FooterComponent
+    
  
   ],
   imports: [

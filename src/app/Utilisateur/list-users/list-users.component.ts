@@ -9,11 +9,13 @@ import { UsersService } from 'src/app/services/users.service';
 export class ListUsersComponent implements OnInit {
 
   listUsers: any;
-
+  loginData:any;
   constructor(public service: UsersService) { }
 
   ngOnInit(): void {
     this.listerUsers();
+    this.loginData = JSON.parse(localStorage["isLogin"]);
+    
   }
 
   listerUsers(){
@@ -22,6 +24,16 @@ export class ListUsersComponent implements OnInit {
       return this.listUsers=data;
 
     })
+  }
+  deleteUser(id:any):void{
+    if(confirm("Voulez-vous supprimer ??")){
+     let userId = this.loginData.id;
+   this.service.deleteUser(id, userId).subscribe((data)=>{
+     
+     this.listerUsers();
+   });
+  }
+   
   }
 
 }

@@ -41,11 +41,11 @@
                        <div class="form-row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="profile">Profile</label>
-                            <select id="inputStat" class="form-control" name="profile" [(ngModel)]="adminData.profile.id">
+                            <label for="genre">Genre</label>
+                            <select id="genre" class="form-control" name="genre" [(ngModel)]="adminData.genre">
                                 <option></option>
-                                <option value="1">SuperAdmin</option>
-                                <option value="2">Admin</option>
+                                <option value="HOMME">HOMME</option>
+                                <option value="FEMME">FEMME</option>
                             </select>
                         </div>
                     </div>
@@ -71,11 +71,11 @@
             <div class="form-row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="genre">Genre</label>
-                        <select id="inputStat" class="form-control" [(ngModel)]="adminData.genre" name="genre">
+                        <label for="Type">Type utilisateur</label>
+                        <select id="Type" class="form-control" [(ngModel)]="adminData.Type" name="Type">
                             <option></option>
-                            <option value="HOMME">Homme</option>
-                            <option value="FEMME">Femme</option>
+                            <option value="APPRENANT">APPRENANT</option>
+                            <option value="FORMATEUR">FORMATEUR</option>
                         </select>
                     </div>
                 </div>
@@ -91,11 +91,25 @@
                 </div>
               
             </div>
+
+
+            <div class="form-row">
+
+                <div class="col-md-6" *ngIf="adminData.Type=='APPRENANT'">
+                    <div class="form-group"  >
+                        <label for="promotion">Promotion</label>
+                        <select id="promotion" class="form-control" [(ngModel)]="adminData.promotion.id" name="adminData.promotion.id" >
+                            <option value="adminData.promotion.id">{{adminData.promotion.nom}}</option>
+                            <option *ngFor="let promo of promotions" value="{{promo.id}}">{{promo.nom}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <input type="hidden" class="form-control" [(ngModel)]= "loginData.id" name="userId"  >
  
             <div class="form-group">
                 <div class="offset-md-3 col-md-9" style="padding: 30px;">
-                <button type="reset" class="btn btn-danger mr-5" routerLink="/listAdmins">Retour</button>
+                <button type="reset" class="btn btn-danger mr-5" routerLink="/listUsers">Retour</button>
               
                      <button type="submit" class="btn btn-success ms-5" (click)="onUpdate()">Valider</button>
                     </div>

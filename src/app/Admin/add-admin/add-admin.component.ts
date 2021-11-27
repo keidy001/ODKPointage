@@ -18,7 +18,10 @@ export class AddAdminComponent implements OnInit {
   chaine : string;
   loginData: any;
 
-  constructor(public service: UsersService, public  route: ActivatedRoute, public router : Router) { }
+  constructor(
+    public service: UsersService,
+    public  route: ActivatedRoute,
+    public router : Router) { }
 
   ngOnInit(): void {
 
@@ -36,11 +39,12 @@ export class AddAdminComponent implements OnInit {
      addForm.value.profile = obj;
 
     console.log(JSON.stringify(addForm.value));
-   
+
     this.service.addAdmin(addForm.value).subscribe(
       
       (data)=>{
         this.router.navigateByUrl("listAdmins");
+      
         console.log("hello world" +data);
        
         

@@ -7,13 +7,16 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./list-admin.component.css']
 })
 export class ListAdminComponent implements OnInit {
-listAdmin:any =[]
+listAdmin:any =[];
+loginData : any;
   constructor(private serviceAdmin:UsersService) {
 
    }
    
   ngOnInit(): void {
    this.listerAdmin();
+   this.loginData = JSON.parse(localStorage["isLogin"]);
+
   }
 
   listerAdmin(){
@@ -23,7 +26,8 @@ listAdmin:any =[]
   }
   deleteAdmin(id:any):void{
     if(confirm("Voulez-vous supprimer ??")){
-   this.serviceAdmin.deleteAdmin(id).subscribe((data)=>{
+     let userId = this.loginData.id;
+   this.serviceAdmin.deleteAdmin(id, userId).subscribe((data)=>{
      console.log(data); 
      this.listerAdmin();
    });

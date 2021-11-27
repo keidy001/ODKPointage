@@ -27,12 +27,12 @@ export class UsersService {
     }
 
     addAdmin(data:any){
-      console.log(data.userId);
+    
       return this.http.post(this.url+"/admin/ajout_admin/"+data.userId, data, {responseType:"text"});
     }
 
-    deleteAdmin(id:any){
-        return this.http.delete(this.url+"/admin/supprimerAdmin/"+id,{responseType:'text'});
+    deleteAdmin(id:any, userId:number){
+        return this.http.delete(this.url+"/admin/supprimerAdmin/"+id+"&"+userId,{responseType:'text'});
     }
     detailAdmin(id:any){
       return this.http.get(this.url +"/admin/afficherAdminById/"+ id);
@@ -48,7 +48,31 @@ export class UsersService {
       return this.http.get(this.url+"/utilisateurs/afficher_list_utilisateur");
     }
 
+    addUsers(data:any){
+      
+      return this.http.post(this.url+"/utilisateurs/ajout_utilisateur/"+data.userId, data, {responseType:"text"});
+    }
 
-
-
+    deleteUser(id:any, userId:number){
+      return this.http.delete(this.url+"/utilisateurs/supprimerUser/"+id+"&"+userId,{responseType:'text'});
   }
+
+  
+  detailUser(id:any){
+    return this.http.get(this.url +"/utilisateurs/afficher_by_id/"+ id);
+  }
+
+updateUser(id: number, userId:number, data: any){
+ 
+  return this.http.put(this.url+"/utilisateurs/modifier_utilisateur/"+id+"&"+userId, data);
+}
+
+
+
+ //-------------------------------------------------------Promotions APi service --------------
+
+getAllPromotions(){
+  return this.http.get(this.url+"/promotion/afficherpromotion");
+}
+
+}
