@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sat Nov 27 2021 11:34:16 GMT+0000 (heure moyenne de Greenwich)
+------------------------------------------------------
+
+Modified files:
+* angular.json
+* package-lock.json
+* package.json
+
+
+Created files:
+* .autogit/autogit.json
+
+
+Deleted files:
+
+
+Renamed files:
