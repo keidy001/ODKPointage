@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Sun Nov 28 2021 11:25:38 GMT+0000 (heure moyenne de Greenwich)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:

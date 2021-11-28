@@ -17,6 +17,10 @@ import { AddUsersComponent } from './Utilisateur/add-users/add-users.component';
 import { DetailUserComponent } from './listUsers/detail-user/detail-user.component';
 import { UpdateUserComponent } from './Utilisateur/update-user/update-user.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.component';
+import { UpdatePromotionComponent } from './promotion/update-promotion/update-promotion.component';
+import { DetailPromotionComponent } from './promotion/detail-promotion/detail-promotion.component';
+import { ListePromotionComponent } from './promotion/liste-promotion/liste-promotion.component';
 
 
 
@@ -34,7 +38,11 @@ import { FooterComponent } from './footer/footer.component';
     AddUsersComponent,
     DetailUserComponent,
     UpdateUserComponent,
-    FooterComponent
+    FooterComponent,
+    AddPromotionComponent,
+    UpdatePromotionComponent,
+    DetailPromotionComponent,
+    ListePromotionComponent
     
  
   ],
