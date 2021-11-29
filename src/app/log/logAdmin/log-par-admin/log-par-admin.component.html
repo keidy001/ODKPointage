@@ -1,0 +1,127 @@
+
+    <!-- start page content -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div class="row justify-content-center" >
+                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="panel-body">
+                            <h3  routerLink="/log">Liste des logs</h3>
+                            <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
+                                <div class="progress-bar progress-bar-orange width-100" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="text-small margin-top-10 full-width"></span> </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="panel-body">
+                            <h3  routerLink="/logSuper">Par SuperAdmin</h3>
+                            <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
+                                <div class="progress-bar progress-bar-purple width-100" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="text-small margin-top-10 full-width"></span> </div>
+                    </div>
+                </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="card ">
+                            <div class="panel-body">
+                                <h3 routerLink="/logUtilisateur">Par Utilisateur</h3>
+                                <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
+                                    <div class="progress-bar progress-bar-cyan width-100" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="text-small margin-top-10 full-width"></span> </div>
+                        </div>
+                    </div>
+                </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-box">
+            <div class="card-head">
+                <header>Liste des Logs Admin</header>
+                <div class="tools">
+                    <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                    <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                    <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                </div>
+            </div>
+            <div class="card-body ">
+                <div class="row p-b-20">
+        
+                    <div class="col-md-6 col-sm-6 col-6">
+                        <div class="btn-group pull-right">
+                            <a class="btn deepPink-bgcolor  btn-outline dropdown-toggle" data-toggle="dropdown">Tools
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="fa fa-print"></i> Print </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="fa fa-file-pdf-o"></i> Save as PDF </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="fa fa-file-excel-o"></i> Export to Excel </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-scrollable">
+                <table class="table table-hover table-checkable order-column full-width" id="example4">
+                    <thead>
+                        <tr>
+                            <th class="center"></th>
+                            <th class="center"> Type Acteur </th>
+                            <th class="center"> Action </th>
+                            <th class="center"> Date </th>
+                            <th class="center"> Heure </th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        
+                        <tr class="odd gradeX" *ngFor="let log Of logAdmin">
+                            
+                            <td class="user-circle-img"><a>
+                                    <img src="../../../assets/images/odk_icon.png" width="50px" alt="">
+                            </a></td>
+                            <td class="center">
+                            <a>{{log.typeActeur}}</a>
+                            </td>
+                            <td class="center">
+                                <a>{{log.action}}</a>
+                            </td>
+                            <td class="center">
+                                <a>{{log.date}}</a>
+                            </td>
+                            <td class="center">
+                                <a>{{log.heure}} -->
+                            </a>
+                            </td>
+                
+                                
+                            <td class="center">
+
+                                <!-- <a class="btn btn-tbl-edit btn-xs" routerLink="/updatePromo/{{promo.id}}">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                
+                                <button class="btn btn-tbl-delete btn-xs" (click)="deletepromo(promo.id)">
+                                    <i class="fa fa-trash-o "></i>
+                                </button> -->
+                            </td>
+                        </tr>
+
+                       
+                        
+                        
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

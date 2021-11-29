@@ -1,0 +1,62 @@
+<style>  
+     th, td{  
+      border: 2px solid black;  
+    }  
+    td{
+        width:30%;
+    }
+
+    </style>
+			<!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card card-box">
+				<div class="card-head">
+					<header>Liste de pointage</header>
+					<div class="tools">
+						<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+						<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+						<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+					</div>
+				</div>
+				<div class="card-body ">
+					<div class="row p-b-20">
+						<div class="col-md-6 col-sm-6 col-6">
+						
+						</div>
+						<div class="col-md-6 col-sm-6 col-6">
+						</div>
+					</div>
+					<div class="table-scrollable">
+					
+                        <div id="pricipal">
+                            <table class="table table-hover table-checkable order-column full-width">
+						<thead>
+                                <tr>
+                                <td>Date jour pointage</td>
+                                <td>Heure d'arriver</td>
+                                <td>Heure de départ</td>
+                            </tr>  
+                                
+						</thead>
+                        <tbody  *ngFor="let user of listUser">
+                            <tr >
+                                <td> {{user.date}} </td>
+                                <td> {{user.heureArrivee}}</td>
+                                <td> {{user.heureDepart}}</td>
+                            </tr>  
+                            
+                            
+                        </tbody>
+                    </table>
+                        </div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	            <!-- end page content -->
+           

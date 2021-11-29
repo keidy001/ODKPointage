@@ -110,4 +110,15 @@ listParMois(month:any){
   return this.http.get(this.url+"/pointage/pointageByMonth/month="+month)
 }
 
+
+
+ //-------------------------------------------------------Logs APi service --------------
+
+getAlllog(){
+  return this.http.get(this.url+"/log/listeLog");
+}
+getLogParActeur(id : number,acteur: any){
+  return this.http.get(this.url+"/log/afficherParActeur/"+id+"&"+acteur);
+}
+afficherListPointage(){   return this.http.get(this.url+("/pointage/listPointage")); }
 }

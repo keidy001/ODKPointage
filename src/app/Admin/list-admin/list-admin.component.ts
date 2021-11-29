@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationDialogService } from 'src/app/confirmationDialog/confirmation-dialog.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { UsersService } from 'src/app/services/users.service';
 export class ListAdminComponent implements OnInit {
 listAdmin:any =[];
 loginData : any;
-  constructor(private serviceAdmin:UsersService) {
+searchText: any;
+userId: any;
+
+  constructor(private serviceAdmin:UsersService, private confirmationDialogService: ConfirmationDialogService) {
 
    }
    
@@ -17,6 +21,21 @@ loginData : any;
    this.listerAdmin();
    this.loginData = JSON.parse(localStorage["isLogin"]);
 
+  }
+
+
+
+  public openConfirmationDialog(id:any) {
+    this.confirmationDialogService.confirm('Veuillez confirmer ..', 'Voulez-vous supprimer ... ?')
+    .then((confirmed) => 
+
+    this.serviceAdmin.deleteAdmin(id, this.userId).subscribe((data)=>{
+      console.log(data); 
+      this.listerAdmin();
+    }))
+    .catch(
+      () => 
+      console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
   }
 
   listerAdmin(){

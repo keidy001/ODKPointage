@@ -23,6 +23,10 @@ import { ListePromotionComponent } from './promotion/liste-promotion/liste-promo
 import { ListPointageComponent } from './PointageAdministrateur/list-pointage/list-pointage.component';
 import { DetailPointageComponent } from './PointageAdministrateur/detail-pointage/detail-pointage.component';
 import { DatePipe } from '@angular/common';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ConfirmationDialogComponent } from './confirmationDialog/confirmation-dialog.component';
+import { ConfirmationDialogService } from './confirmationDialog/confirmation-dialog.service';
+import { UserSpaceComponent } from './user-space/user-space.component';
 
 
 
@@ -48,6 +52,9 @@ import { DatePipe } from '@angular/common';
     ListePromotionComponent,
     ListPointageComponent,
     DetailPointageComponent,
+    ConfirmationDialogComponent,
+    UserSpaceComponent
+    
     
     
  
@@ -58,13 +65,17 @@ import { DatePipe } from '@angular/common';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
+
     
     
 
   
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    
+    ConfirmationDialogService
   ],
   bootstrap: [AppComponent]
 })

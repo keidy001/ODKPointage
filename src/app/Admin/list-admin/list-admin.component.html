@@ -8,8 +8,10 @@
 								<div class="card-head">
 									<header>Liste des Administrateurs</header>
 									<div class="tools">
-										<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+										<!-- Search form -->
+										<div class="md-form mt-0">
+                                            <input class="form-control mr-sm-2" type="text"   [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+                                        </div>
 									</div>
 								</div>
 								<div class="card-body ">
@@ -58,7 +60,7 @@
 											</tr>
 										</thead>
 										<tbody >
-											<tr class="odd gradeX" *ngFor="let admin of listAdmin"  >
+											<tr class="odd gradeX" *ngFor="let admin of listAdmin | filter:searchText"  >
 												<td class="user-circle-img">
 														<img src="../../../assets/images/odk_icon.png" width="50px" alt="">
 												</td>

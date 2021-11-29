@@ -17,11 +17,16 @@ import { DetailPromotionComponent } from './promotion/detail-promotion/detail-pr
 import { UpdatePromotionComponent } from './promotion/update-promotion/update-promotion.component';
 import { ListPointageComponent } from './PointageAdministrateur/list-pointage/list-pointage.component';
 import { DetailPointageComponent } from './PointageAdministrateur/detail-pointage/detail-pointage.component';
+import { LogParUtilisateurComponent } from './log/logUtilisateur/log-par-utilisateur/log-par-utilisateur.component';
+import { LogParAdminComponent } from './log/logAdmin/log-par-admin/log-par-admin.component';
+import { LogParSuperAdminComponent } from './log/logSuper/log-par-super-admin/log-par-super-admin.component';
+import { ListelogComponent } from './log/listelog/listelog.component';
+import { UserSpaceComponent } from './user-space/user-space.component';
 
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent},
   { path: 'login',component: LoginComponent},
-<<<<<<< HEAD
+
   { path: 'listUsers',component:ListUsersComponent,canActivate:[GuardGuard]},
   { path: 'addUsers', component:AddUsersComponent,canActivate:[GuardGuard]},
   { path: 'addAdmin',component:AddAdminComponent,canActivate:[GuardGuard]},
@@ -36,7 +41,6 @@ const routes: Routes = [
   { path: 'listAdmins', component: ListAdminComponent,canActivate:[GuardGuard]},
   { path: 'listPointage', component: ListPointageComponent},
   { path: 'detailPointage/:id', component: DetailPointageComponent},
-=======
   { path: 'listUsers',component:ListUsersComponent},
   { path: 'addUsers', component:AddUsersComponent},
   { path: 'addAdmin',component:AddAdminComponent},
@@ -48,8 +52,12 @@ const routes: Routes = [
   { path: 'updateAdmin/:id',component:UpdateAdminComponent},
   { path: 'detailUser/:id',component:DetailUserComponent},
   { path: 'updateUser/:id',component:UpdateUserComponent},
-  { path: 'listAdmins', component: ListAdminComponent},
->>>>>>> 9e59273d54b97e3af15e2e9e7ead6d32f1db8c70
+  { path: 'listAdmins', component:ListAdminComponent},
+  { path: 'logUtilisateur', component:LogParUtilisateurComponent,},
+  { path: 'logAdmin', component:LogParAdminComponent,},
+  { path: 'logSuper', component:LogParSuperAdminComponent ,},
+  { path: 'log', component:ListelogComponent ,},
+  {path:'userSpace', component:UserSpaceComponent},
   { path: '**', redirectTo: '/login', pathMatch:'full'},
  
 ];
