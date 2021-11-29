@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    private route : Router,
+    
+    ){}
 
+loginData:any;
+stateRoute:any;
   ngOnInit(): void {
+   
+    console.log('ok'+this.stateRoute);
+    if(localStorage["isLogin"]){
+    this.loginData=JSON.parse(localStorage["isLogin"]);
   }
-
+  }
 }

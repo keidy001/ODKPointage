@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -21,6 +20,7 @@ import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.c
 import { UpdatePromotionComponent } from './promotion/update-promotion/update-promotion.component';
 import { DetailPromotionComponent } from './promotion/detail-promotion/detail-promotion.component';
 import { ListePromotionComponent } from './promotion/liste-promotion/liste-promotion.component';
+
 
 
 
@@ -54,7 +54,9 @@ import { ListePromotionComponent } from './promotion/liste-promotion/liste-promo
     ReactiveFormsModule,
   
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
