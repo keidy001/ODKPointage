@@ -12,7 +12,7 @@ import { DetailUserComponent } from './listUsers/detail-user/detail-user.compone
 import { UpdateUserComponent } from './Utilisateur/update-user/update-user.component';
 import { GuardGuard } from './guard.guard';
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent, canActivate:[GuardGuard]},
+  { path: 'accueil', component: AccueilComponent,},
   { path: 'login',component: LoginComponent},
   { path: 'listUsers',component:ListUsersComponent, canActivate:[GuardGuard]},
   { path: 'addUsers', component:AddUsersComponent, canActivate:[GuardGuard]},
