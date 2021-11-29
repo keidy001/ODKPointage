@@ -17,20 +17,20 @@ import { DetailPromotionComponent } from './promotion/detail-promotion/detail-pr
 import { UpdatePromotionComponent } from './promotion/update-promotion/update-promotion.component';
 
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent,canActivate:[GuardGuard]},
+  { path: 'accueil', component: AccueilComponent},
   { path: 'login',component: LoginComponent},
-  { path: 'listUsers',component:ListUsersComponent,canActivate:[GuardGuard]},
-  { path: 'addUsers', component:AddUsersComponent,canActivate:[GuardGuard]},
-  { path: 'addAdmin',component:AddAdminComponent,canActivate:[GuardGuard]},
-  { path: 'addPromotion',component:AddPromotionComponent,canActivate:[GuardGuard]},
-  { path: 'listPromotion',component:ListePromotionComponent,canActivate:[GuardGuard]},
-  { path: 'detailPromotion/:id',component:DetailPromotionComponent,canActivate:[GuardGuard]},
-  { path: 'updatePromotion/:id',component:UpdatePromotionComponent,canActivate:[GuardGuard]},
-  { path: 'detailAdmin/:id',component:DetailAdminComponent,canActivate:[GuardGuard]},
-  { path: 'updateAdmin/:id',component:UpdateAdminComponent,canActivate:[GuardGuard]},
-  { path: 'detailUser/:id',component:DetailUserComponent,canActivate:[GuardGuard]},
-  { path: 'updateUser/:id',component:UpdateUserComponent,canActivate:[GuardGuard]},
-  { path: 'listAdmins', component: ListAdminComponent,canActivate:[GuardGuard]},
+  { path: 'listUsers',component:ListUsersComponent},
+  { path: 'addUsers', component:AddUsersComponent},
+  { path: 'addAdmin',component:AddAdminComponent},
+  { path: 'addPromotion',component:AddPromotionComponent},
+  {path: 'listPromotion',component:ListePromotionComponent},
+  {path: 'detailPromotion/:id',component:DetailPromotionComponent},
+  {path: 'updatePromotion/:id',component:UpdatePromotionComponent},
+  { path: 'detailAdmin/:id',component:DetailAdminComponent},
+  { path: 'updateAdmin/:id',component:UpdateAdminComponent},
+  { path: 'detailUser/:id',component:DetailUserComponent},
+  { path: 'updateUser/:id',component:UpdateUserComponent},
+  { path: 'listAdmins', component: ListAdminComponent},
   { path: '**', redirectTo: '/login', pathMatch:'full'},
  
 ];
