@@ -20,6 +20,9 @@ import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.c
 import { UpdatePromotionComponent } from './promotion/update-promotion/update-promotion.component';
 import { DetailPromotionComponent } from './promotion/detail-promotion/detail-promotion.component';
 import { ListePromotionComponent } from './promotion/liste-promotion/liste-promotion.component';
+import { ListPointageComponent } from './PointageAdministrateur/list-pointage/list-pointage.component';
+import { DetailPointageComponent } from './PointageAdministrateur/detail-pointage/detail-pointage.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -42,7 +45,10 @@ import { ListePromotionComponent } from './promotion/liste-promotion/liste-promo
     AddPromotionComponent,
     UpdatePromotionComponent,
     DetailPromotionComponent,
-    ListePromotionComponent
+    ListePromotionComponent,
+    ListPointageComponent,
+    DetailPointageComponent,
+    
     
  
   ],
@@ -52,10 +58,13 @@ import { ListePromotionComponent } from './promotion/liste-promotion/liste-promo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    
+    
+
   
   ],
   providers: [
-  
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

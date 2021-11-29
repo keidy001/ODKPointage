@@ -15,6 +15,8 @@ import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.c
 import { ListePromotionComponent } from './promotion/liste-promotion/liste-promotion.component';
 import { DetailPromotionComponent } from './promotion/detail-promotion/detail-promotion.component';
 import { UpdatePromotionComponent } from './promotion/update-promotion/update-promotion.component';
+import { ListPointageComponent } from './PointageAdministrateur/list-pointage/list-pointage.component';
+import { DetailPointageComponent } from './PointageAdministrateur/detail-pointage/detail-pointage.component';
 
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent,canActivate:[GuardGuard]},
@@ -31,6 +33,8 @@ const routes: Routes = [
   { path: 'detailUser/:id',component:DetailUserComponent,canActivate:[GuardGuard]},
   { path: 'updateUser/:id',component:UpdateUserComponent,canActivate:[GuardGuard]},
   { path: 'listAdmins', component: ListAdminComponent,canActivate:[GuardGuard]},
+  { path: 'listPointage', component: ListPointageComponent},
+  { path: 'detailPointage/:id', component: DetailPointageComponent},
   { path: '**', redirectTo: '/login', pathMatch:'full'},
  
 ];

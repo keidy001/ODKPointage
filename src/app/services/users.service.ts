@@ -92,4 +92,22 @@ updatePromotion(id: number, userId:number, data: any){
 
 return this.http.put(this.url+"/promotion/modifier/"+id+"&"+userId, data);
 }
+//GET pointage by day
+AllPointageAdmin(){
+  return this.http.get(this.url+"/pointage/listPointage");
+}
+detailPointageAdmin(id:any){
+  return this.http.get(this.url +"/pointage/afficherPointage/"+ id);
+}
+
+listParJour(day:any){
+  return this.http.get(this.url+"/pointage/pointageByDay/date="+day)
+}
+listParSemaine(week:any){
+  return this.http.get(this.url+"/pointage/pointageByWeek/week="+week)
+}
+listParMois(month:any){
+  return this.http.get(this.url+"/pointage/pointageByMonth/month="+month)
+}
+
 }
