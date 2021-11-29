@@ -85,7 +85,7 @@ deletePromotion(id:any, userId:number){
 }
 
 detailPromotion(id:any){
-  return this.http.get(this.url +"/promotion/afficherpromotion/"+ id);
+  return this.http.get(this.url +"/promotion/afficherparid/"+ id);
 }
 
 updatePromotion(id: number, userId:number, data: any){
