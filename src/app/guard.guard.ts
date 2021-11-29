@@ -10,6 +10,10 @@ export class GuardGuard implements CanActivate {
     private router: Router,
   ){}
   statRoute:any;
+  ngOnInit(): void {
+    this.statRoute = localStorage.setItem("stateLog", this.statRoute);
+  
+  }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):  boolean  {
@@ -19,11 +23,10 @@ export class GuardGuard implements CanActivate {
         this.statRoute = route.url[0].path;
         console.log(this.statRoute);
         return true;
+      
       }
-
       this.router.navigate(["/accueil"]);
     return true;
-
       this.router.navigate(["/login"]);
       this.router.navigate(["/login"]);
     return false;

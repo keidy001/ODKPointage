@@ -1,6 +1,6 @@
 
 <!-- start header -->
-<div class="page-header navbar navbar-fixed-top" *ngIf="stateRoute">
+<div class="page-header navbar navbar-fixed-top" *ngIf="loginData">
   <div class="page-header-inner ">
       <!-- logo start -->
       <div class="page-logo">
@@ -71,7 +71,7 @@
 <!-- start page container -->
 <div class="page-container">
    <!-- start sidebar menu -->
-   <div class="sidebar-container" *ngIf="stateRoute">
+   <div class="sidebar-container" *ngIf="loginData">
        <div class="sidemenu-container navbar-collapse collapse fixed-menu">
           <div id="remove-scroll">
               <ul class="sidemenu page-header-fixed p-t-20" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">

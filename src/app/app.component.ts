@@ -16,8 +16,8 @@ export class AppComponent {
 loginData:any;
 stateRoute:any;
   ngOnInit(): void {
-    this.stateRoute = this.guard.statRoute;
-    console.log('ok'+this.stateRoute);
+    this.stateRoute = localStorage["stateLog"];
+    console.log(localStorage["stateLog"]);
     if(localStorage["isLogin"]){
     this.loginData=JSON.parse(localStorage["isLogin"]);
   }
