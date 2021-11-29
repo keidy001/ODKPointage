@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon Nov 29 2021 09:51:11 GMT+0000 (heure moyenne de Greenwich)
+------------------------------------------------------
+
+Modified files:
+* src/app/services/users.service.ts
+
+
+Created files:
+* .autogit/logs/log-29-10-2021-9-20-52.txt
+
+
+Deleted files:
+
+
+Renamed files:

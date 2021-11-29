@@ -1,0 +1,93 @@
+
+    <!-- start page content -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="card card-box">
+                        <div class="card-head">
+                            <header>Nouvelle Promotion</header>
+                            <div class="tools">
+                                <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
+                                <a class="t-close btn-danger fa fa-times  " href="/listPromotion"></a>
+                                <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
+                            </div>
+                        </div>
+                        <div class="card-body" id="bar-parent2">
+                            <form  id="form_sample_2" class="form-horizontal" novalidate="novalidate" #addForm="ngForm">
+                                <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="prenom">Année</label>
+                                <input type="text" class="form-control" ngModel name="annee" >
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="dateDebut">Date de début</label>
+                                <input type="date" class="form-control" ngModel name="dateDebut" >
+                            </div>
+                     </div>
+                 <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="dateFin">Date de Fin</label>
+                            <input type="date" class="form-control" ngModel name="dateFin" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="horaireDebutJournee">Heure de réprise</label>
+                            <input type="time" class="form-control" ngModel name="horaireDebutJournee" >
+                        </div>                                          
+                         </div>         
+                     </div>
+                       <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="horaireFinJournee">Heure de déscente</label>
+                            <input type="time" class="form-control" id="tel" ngModel name="horaireFinJournee" >
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nom">Nom de la Promotion</label>
+                            <input type="text" class="form-control" id="tel" ngModel name="nom" >
+                        </div>
+                     </div>            
+                       </div>
+            
+                       <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="nombreFemmes">Nombre de Femme</label>
+                    <input type="int" class="form-control" ngModel name="nombreFemmes">
+                  </div>
+                 <div class="form-group col-md-6">
+                    <label for="nombreHommes">Nombre d'Homme</label>
+                    <input type="int" class="form-control" ngModel name="nombreHommes" >
+                  </div>
+                  </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="totalApprenants">Total de Apprenant</label>
+                    <input type="int" class="form-control" ngModel name="totalApprenants">
+                  </div>
+              
+            </div>
+             
+            <input type="hidden" class="form-control" [(ngModel)]= "loginData.id" name="userId"  >
+
+            <div class="form-group">
+                <div class="offset-md-3 col-md-9" style="padding: 30px;">
+                <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>
+              
+                     <button type="submit" class="btn btn-success ms-5" (click)="ajouterPromotion(addForm)">Valider</button>
+                    </div>
+                    </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- end page content -->
+           

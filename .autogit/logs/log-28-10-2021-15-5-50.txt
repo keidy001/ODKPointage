@@ -1,0 +1,41 @@
+-------------------- Auto-Git Log --------------------
+		Sun Nov 28 2021 15:05:50 GMT+0000 (heure moyenne de Greenwich)
+------------------------------------------------------
+
+Modified files:
+* src/app/app.module.ts
+
+
+Created files:
+* .autogit/logs/log-28-10-2021-11-25-38.txt
+* src/app/promotion/add-promotion/add-promotion.component.html
+* src/app/promotion/add-promotion/add-promotion.component.ts
+* src/app/promotion/detail-promotion/detail-promotion.component.html
+* src/app/promotion/detail-promotion/detail-promotion.component.ts
+* src/app/promotion/liste-promotion/liste-promotion.component.html
+* src/app/promotion/liste-promotion/liste-promotion.component.ts
+* src/app/promotion/update-promotion/update-promotion.component.css
+* src/app/promotion/update-promotion/update-promotion.component.html
+* src/app/promotion/update-promotion/update-promotion.component.ts
+
+
+Deleted files:
+* src/app/promo/detail-promo/detail-promo.component.html
+* src/app/promo/detail-promo/detail-promo.component.ts
+* src/app/promo/update-promo/update-promo.component.html
+* src/app/promo/update-promo/update-promo.component.ts
+* src/app/promotion/liste-promo/liste-promo.component.css
+* src/app/promotion/liste-promo/liste-promo.component.html
+* src/app/promotion/liste-promo/liste-promo.component.ts
+* src/app/promotion/promo/promo.component.html
+* src/app/promotion/promo/promo.component.ts
+
+
+Renamed files:
+* [object Object]
+* [object Object]
+* [object Object]
+* [object Object]
+* [object Object]
+* [object Object]
+* [object Object]

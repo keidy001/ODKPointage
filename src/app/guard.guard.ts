@@ -9,16 +9,25 @@ export class GuardGuard implements CanActivate {
   constructor(
     private router: Router,
   ){}
+  statRoute:any;
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      let loginData = JSON.parse(localStorage["isLogin"]);
+    state: RouterStateSnapshot):  boolean  {
+      
+      let loginData =localStorage["isLogin"];
       if(loginData){
-        this.router.navigate(["/login"]);
-        return false;
+        this.statRoute = route.url[0].path;
+        console.log(this.statRoute);
+        return true;
       }
+
       this.router.navigate(["/accueil"]);
     return true;
+
+      this.router.navigate(["/login"]);
+      this.router.navigate(["/login"]);
+    return false;
+
   }
   
 }

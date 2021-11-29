@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GuardGuard } from './guard.guard';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,18 @@ import { Router } from '@angular/router';
 export class AppComponent {
   public constructor( 
     private route : Router,
+    private guard:GuardGuard,
     ){}
   title = 'OdkPointage';
 loginData:any;
+stateRoute:any;
   ngOnInit(): void {
+    this.stateRoute = this.guard.statRoute;
+    console.log('ok'+this.stateRoute);
+    if(localStorage["isLogin"]){
     this.loginData=JSON.parse(localStorage["isLogin"]);
-    if(this.loginData==null){
+  }
     
-    }
 
   }
   logOut(){
