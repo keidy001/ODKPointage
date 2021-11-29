@@ -75,4 +75,21 @@ getAllPromotions(){
   return this.http.get(this.url+"/promotion/afficherpromotion");
 }
 
+addPromotion(data:any){
+    
+  return this.http.post(this.url+"/promotion/ajouter/"+data.userId, data, {responseType:"text"});
+}
+
+deletePromotion(id:any, userId:number){
+  return this.http.delete(this.url+"/promotion/supprimer/"+id+"&"+userId,{responseType:'text'});
+}
+
+detailPromotion(id:any){
+  return this.http.get(this.url +"/promotion/afficherpromotion/"+ id);
+}
+
+updatePromotion(id: number, userId:number, data: any){
+
+return this.http.put(this.url+"/promotion/modifier/"+id+"&"+userId, data);
+}
 }
