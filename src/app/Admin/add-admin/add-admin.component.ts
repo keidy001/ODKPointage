@@ -52,5 +52,8 @@ export class AddAdminComponent implements OnInit {
       }
     )
   }
-
+  logOut(){
+    localStorage.removeItem('isLogin');
+  this.router.navigateByUrl('/');
+}
 }

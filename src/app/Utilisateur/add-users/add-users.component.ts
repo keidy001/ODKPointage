@@ -51,7 +51,7 @@ export class AddUsersComponent implements OnInit {
     let userData = {
           prenom : this.prenom,
           nom: this.nom,
-          email: this.nom,
+          email: this.email,
           genre: this.genre,
           telephone:this.telephone,
           motDePass:this.password,
@@ -87,4 +87,8 @@ export class AddUsersComponent implements OnInit {
       }
     )
   }
+  logOut(){
+    localStorage.removeItem('isLogin');
+  this.router.navigateByUrl('/');
+}
 }
