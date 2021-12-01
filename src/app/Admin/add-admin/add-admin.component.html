@@ -183,7 +183,122 @@
 
 
     <!-- start page content -->
+<<<<<<< HEAD
    
+=======
+    <div class="page-content-wrapper">
+        <div class="page-content">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="card card-box">
+                        <div class="card-head">
+                            <header>Nouveau Administrateur</header>
+                            <div class="tools">
+                                <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
+                                <a class="t-close btn-danger fa fa-times  " href="/listAdmins"></a>
+                                <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
+                            </div>
+                        </div>
+                        <div class="card-body" id="bar-parent2">
+                            <form  id="form_sample_2" class="form-horizontal" novalidate="novalidate" #addForm="ngForm">
+                                <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="prenom">Prénom</label>
+                                <input type="text" class="form-control" ngModel name="prenom" >
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" ngModel name="nom" >
+                            </div>
+                     </div>
+                 <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" ngModel name="email" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="adresse">Adresse</label>
+                            <input type="text" class="form-control" ngModel name="adresse" >
+                        </div>                                          
+                         </div>         
+                       </div>
+                       <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="profile">Profile</label>
+                            <select id="inputStat" class="form-control" ngModel name="profile" >
+                                <option></option>
+                                <option value="1">SuperAdmin</option>
+                                <option value="2">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input type="tel" class="form-control" id="tel" ngModel name="telephone" >
+                        </div>
+                     </div>            
+                       </div>
+            
+                       <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="login">Login</label>
+                    <input type="text" class="form-control" ngModel name="login">
+                  </div>
+                 <div class="form-group col-md-6">
+                    <label for="motDePass">Mot de passe</label>
+                    <input type="text" class="form-control" ngModel name="motDePass" >
+                  </div>
+                  </div>
+            
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <select id="inputState" class="form-control" ngModel name="genre">
+                            <option></option>
+                            <option value="HOMME">Homme</option>
+                            <option value="FEMME">Femme</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="etat">Etat</label>
+                        <select id="inputState" class="form-control" ngModel name="etat">
+                            <option></option>
+                            <option value="ACTIVER">Activer</option>
+                            <option value="DESACTIVER">Désactiver</option>
+                        </select>
+                    </div>
+                </div>
+              
+            </div>
+             
+            <input type="hidden" class="form-control" [(ngModel)]= "loginData.id" name="userId"  >
+
+            <div class="form-group">
+                <div class="offset-md-3 col-md-9" style="padding: 30px;">
+                <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>
+              
+                     <button type="submit" class="btn btn-success ms-5" (click)="ajouterAdmin(addForm)">Valider</button>
+                    </div>
+                    </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- end page content -->
+           
+>>>>>>> 8195d36eb78491e26b54a3c564f860e9de8cf8cd
 
 
      <!-- start chat sidebar -->

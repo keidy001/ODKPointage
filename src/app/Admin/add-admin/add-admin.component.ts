@@ -23,8 +23,12 @@ export class AddAdminComponent implements OnInit {
   constructor(
     public service: UsersService,
     public  route: ActivatedRoute,
+<<<<<<< HEAD
     public router : Router,
     public formBuilder: FormBuilder) { }
+=======
+    public router : Router) { }
+>>>>>>> 8195d36eb78491e26b54a3c564f860e9de8cf8cd
 
   ngOnInit(): void {
     // this.form = this.formBuilder.group({
@@ -32,7 +36,11 @@ export class AddAdminComponent implements OnInit {
     //   nom:[null, [Validators.required]],
     //   prenom:[null, [Validators.required]],
 
+<<<<<<< HEAD
     // })
+=======
+
+>>>>>>> 8195d36eb78491e26b54a3c564f860e9de8cf8cd
     console.log(this.adminData);
     this.loginData=JSON.parse(localStorage["isLogin"]);
 
@@ -52,6 +60,7 @@ export class AddAdminComponent implements OnInit {
   },);
   }
 
+<<<<<<< HEAD
 
   get f() { return this.formgroup.controls; }
   ajouterAdmin(addForm: NgForm){
@@ -87,9 +96,35 @@ export class AddAdminComponent implements OnInit {
 
     // display form values on success
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formgroup.value, null, 4));
+=======
+  ajouterAdmin(addForm: NgForm){
+    //this.chaine = addForm.value.profile;
+    var obj: { [id: string]: any} = {};
+
+     obj.id = addForm.value.profile; 
+     addForm.value.profile = obj;
+
+    console.log(JSON.stringify(addForm.value));
+
+    this.service.addAdmin(addForm.value).subscribe(
+
+      (data)=>{
+        this.router.navigateByUrl("listAdmins");
+
+        console.log("hello world" +data);
+
+
+
+      }
+    )
+>>>>>>> 8195d36eb78491e26b54a3c564f860e9de8cf8cd
   }
   logOut(){
     localStorage.removeItem('isLogin');
   this.router.navigateByUrl('/');
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 8195d36eb78491e26b54a3c564f860e9de8cf8cd
 }
 }
