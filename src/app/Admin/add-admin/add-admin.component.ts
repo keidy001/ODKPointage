@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Admin } from 'src/app/services/serviceInterface';
 import { UsersService } from 'src/app/services/users.service';
@@ -12,62 +12,84 @@ import { UsersService } from 'src/app/services/users.service';
 export class AddAdminComponent implements OnInit {
 
   adminData: any;
-  ngForm: FormGroup;
+  formgroup: FormGroup;
   user: any;
   id: any;
   chaine : string;
   loginData: any;
+  
+  submitted = false;
 
   constructor(
     public service: UsersService,
     public  route: ActivatedRoute,
     public router : Router,
-    private formBuilder: FormBuilder,
-    ) { }
+    public formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    // this.form = this.formBuilder.group({
+    //   email: [null, [Validators.required, Validators.email]],
+    //   nom:[null, [Validators.required]],
+    //   prenom:[null, [Validators.required]],
 
-    this.registerForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue]
-
+    // })
     console.log(this.adminData);
     this.loginData=JSON.parse(localStorage["isLogin"]);
 
+    this.formgroup = this.formBuilder.group({
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      genre: ['', Validators.required],
+      adresse: ['', Validators.required],
+      login: ['', Validators.required],
+      profile: ['', Validators.required],
+      telephone: ['', Validators.required],
+      etat: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      motDePass: ['', [Validators.required, Validators.minLength(6)]],
+      //confirmPassword: ['', Validators.required],
+      //acceptTerms: [false, Validators.requiredTrue] //Checkbox For accept conditions 
+  },);
   }
 
+
+  get f() { return this.formgroup.controls; }
+  ajouterAdmin(addForm: NgForm){
+    //this.chaine = addForm.value.profile;
+    if (addForm.valid){
+      var obj: { [id: string]: any} = {};
+     
+       obj.id = addForm.value.profile; 
+       addForm.value.profile = obj;
   
+      console.log(JSON.stringify(addForm.value));
+  
+      this.service.addAdmin(addForm.value).subscribe(
+        
+        (data)=>{
+          this.router.navigateByUrl("listAdmins");
+        
+          console.log("hello world" +data);         
+        }
+      )
+    }else{
+      console.log("Not valid...")
+    }
+  }
+
+  hello(){
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.formgroup.invalid) {
+        return;
+    }
+
+    // display form values on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formgroup.value, null, 4));
+  }
   logOut(){
     localStorage.removeItem('isLogin');
   this.router.navigateByUrl('/');
 }
-
-registerForm!: FormGroup;
-submitted = false;
-
-
-// convenience getter for easy access to form fields
-get f() { return this.registerForm.controls; }
-
-    onSubmit() {
-  this.submitted = true;
-
-  // stop here if form is invalid
-      if (this.registerForm.invalid) {
-          return;
-      }
-
-      // display form values on success
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
-    }
-
-    onReset() {
-      this.submitted = false;
-      this.registerForm.reset();
-    }
 }
