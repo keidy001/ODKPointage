@@ -1,7 +1,4 @@
 
-
-
- 
 <!-- start header -->
 <div class="page-header navbar navbar-fixed-top" >
     <div class="page-header-inner ">
@@ -38,10 +35,10 @@
                             <a href="/profile">
                                 <i class="icon-user"></i> Profile </a>
                         </li>
-                    
+                      
                         <li>
                             <a (click)="logOut()">
-                                <i class="icon-logout"></i> Deconnexion</a>
+                                <i class="icon-logout"></i>Deconnexion</a>
                         </li>
                     </ul>
                 </li>
@@ -183,125 +180,156 @@
 
 
     <!-- start page content -->
-<<<<<<< HEAD
-   
-=======
     <div class="page-content-wrapper">
         <div class="page-content">
-
-                <div class="col-md-12 col-sm-12">
-                    <div class="card card-box">
-                        <div class="card-head">
-                            <header>Nouveau Administrateur</header>
-                            <div class="tools">
-                                <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
-                                <a class="t-close btn-danger fa fa-times  " href="/listAdmins"></a>
-                                <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
-                            </div>
-                        </div>
-                        <div class="card-body" id="bar-parent2">
-                            <form  id="form_sample_2" class="form-horizontal" novalidate="novalidate" #addForm="ngForm">
-                                <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="prenom">Prénom</label>
-                                <input type="text" class="form-control" ngModel name="prenom" >
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="nom">Nom</label>
-                                <input type="text" class="form-control" ngModel name="nom" >
-                            </div>
-                     </div>
-                 <div class="form-row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" ngModel name="email" >
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Nouveau Administrateur</header>
+                        <div class="tools">
+                            <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
+                            <a class="t-close btn-danger fa fa-times" href="/listAdmins"></a>
+                            <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="adresse">Adresse</label>
-                            <input type="text" class="form-control" ngModel name="adresse" >
-                        </div>                                          
-                         </div>         
-                       </div>
-                       <div class="form-row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="profile">Profile</label>
-                            <select id="inputStat" class="form-control" ngModel name="profile" >
-                                <option></option>
-                                <option value="1">SuperAdmin</option>
-                                <option value="2">Admin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" class="form-control" id="tel" ngModel name="telephone" >
-                        </div>
-                     </div>            
-                       </div>
-            
-                       <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="login">Login</label>
-                    <input type="text" class="form-control" ngModel name="login">
-                  </div>
-                 <div class="form-group col-md-6">
-                    <label for="motDePass">Mot de passe</label>
-                    <input type="text" class="form-control" ngModel name="motDePass" >
-                  </div>
-                  </div>
-            
-            <div class="form-row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="genre">Genre</label>
-                        <select id="inputState" class="form-control" ngModel name="genre">
-                            <option></option>
-                            <option value="HOMME">Homme</option>
-                            <option value="FEMME">Femme</option>
-                        </select>
+                    <div class="card-body" id="bar-parent2">
+                        <form id="form_sample_2" class="form-horizontal"  [formGroup]="formgroup" (ngSubmit)="hello(formgroup)">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control"  formControlName="prenom"   [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }"/>
+                                    <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                        <div *ngIf="f.prenom.errors.required">Le champ prenom est requis</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" formControlName="nom"    [ngClass]="{ 'is-invalid': submitted && f.nom.errors }"/>
+                                    <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                                        <div *ngIf="f.nom.errors.required">le champ nom est requis</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" formControlName="email"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email is required</div>
+                                            <div *ngIf="f.email.errors.email">Email doit être valide</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="adresse">Adresse</label>
+                                        <input type="text" class="form-control"  formControlName="adresse" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+                                        <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                            <div *ngIf="f.prenom.errors.required">le champ adresse  est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="profile">Profile</label>
+                                        <select id="inputStat" class="form-control"  formControlName="profile" [ngClass]="{ 'is-invalid': submitted && f.profile.errors }">
+                                            <option></option>
+                                            <option value="1">SuperAdmin</option>
+                                            <option value="2">Admin</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.profile.errors" class="invalid-feedback">
+                                            <div *ngIf="f.profile.errors.required">Profile est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="telephone">Téléphone</label>
+                                        <input type="number" class="form-control" id="tel"   formControlName="telephone" 
+                                             [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" />
+                                    </div>
+                                    <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                        <div *ngIf="f.telephone.errors.required">Telephone est requis</div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="login">Login</label>
+                                    <input type="text" class="form-control"     formControlName="login" [ngClass]="{ 'is-invalid': submitted && f.login.errors }"/>
+                                    <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+                                        <div *ngIf="f.login.errors.required">le champ login  est requis</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="motDePass">Mot de passe</label>
+                                    <input type="text" class="form-control" formControlName="motDePass"   [ngClass]="{ 'is-invalid': submitted && f.motDePass.errors }" />
+                                </div>
+                                <div *ngIf="submitted && f.motDePass.errors" class="invalid-feedback">
+                                    <div *ngIf="f.motDePass.errors.required">mot de passe est requis</div>
+                                    <div *ngIf="f.motDePass.errors.minlength">mot de passe doit être de 6 caracteres au minimum</div>
+                                </div>
+                            </div>
+    
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="genre">Genre</label>
+                                        <select id="inputState" class="form-control"   formControlName="genre"  [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
+                                            <option></option>
+                                            <option value="HOMME">Homme</option>
+                                            <option value="FEMME">Femme</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.genre.errors" class="invalid-feedback">
+                                            <div *ngIf="f.genre.errors.required">Genre est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="etat">Etat</label>
+                                        <select id="inputState" class="form-control"  formControlName="etat" [ngClass]="{ 'is-invalid': submitted && f.etat.errors }">
+                                            <option></option>
+                                            <option value="ACTIVER">Activer</option>
+                                            <option value="DESACTIVER">Désactiver</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.etat.errors" class="invalid-feedback">
+                                            <div *ngIf="f.etat.errors.required">Etat est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- <input type="hidden" class="form-control" [(ngModel)]="loginData.id" name="userId" /> -->
+    
+                            <div class="form-group">
+                                <div class="offset-md-3 col-md-9" style="padding: 30px">
+                                    <button type="submit" class="btn btn-success me-5" >
+                                        Enregistrer
+                                    </button>
+    
+                                    <button type="reset" class="btn btn-danger ms-5">
+                                        Réinitialiser
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="etat">Etat</label>
-                        <select id="inputState" class="form-control" ngModel name="etat">
-                            <option></option>
-                            <option value="ACTIVER">Activer</option>
-                            <option value="DESACTIVER">Désactiver</option>
-                        </select>
-                    </div>
-                </div>
-              
             </div>
-             
-            <input type="hidden" class="form-control" [(ngModel)]= "loginData.id" name="userId"  >
-
-            <div class="form-group">
-                <div class="offset-md-3 col-md-9" style="padding: 30px;">
-                <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>
-              
-                     <button type="submit" class="btn btn-success ms-5" (click)="ajouterAdmin(addForm)">Valider</button>
-                    </div>
-                    </div>
-                                
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
     </div>
+
     <!-- end page content -->
-           
->>>>>>> 8195d36eb78491e26b54a3c564f860e9de8cf8cd
+    <!-- CSS only -->
 
 
-     <!-- start chat sidebar -->
+    		 <!-- start chat sidebar -->
 <div class="chat-sidebar-container" data-close-on-body-click="false" *ngIf="loginData">
     <div class="chat-sidebar">
         <ul class="nav nav-tabs">
