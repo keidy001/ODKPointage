@@ -13,6 +13,9 @@ export class ListUsersComponent implements OnInit {
   fileName = "listeAdmin.xlsx";
   listUsers: any;
   loginData:any;
+  searchText:any;
+ 
+
   constructor(public service: UsersService,
     private router:Router,
     ) { }

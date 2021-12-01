@@ -13,6 +13,7 @@ export class LogParUtilisateurComponent implements OnInit {
   id=1;
   acteur="UTILISATEUR";
   searchText:any;
+  fileName = "listeAdmin.xlsx";
 
   constructor(
     private service: UsersService,

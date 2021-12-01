@@ -49,7 +49,9 @@ fileName = "listeAdmin.xlsx";
 
   listerAdmin(){
     this.serviceAdmin.getAllAdmin().subscribe((data)=>{
+      
       return this.listAdmin=data;
+     
     })
   }
   deleteAdmin(id:any):void{
