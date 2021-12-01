@@ -1,6 +1,183 @@
 
 
-			
+			<!-- start header -->
+<div class="page-header navbar navbar-fixed-top" >
+    <div class="page-header-inner ">
+        <!-- logo start -->
+        <div class="page-logo">
+            <a href="accueil">
+            <img alt="" src="../../assets/images/odk_icon.png" width="50px">
+            <span class="logo-default" >ODK</span> </a>
+        </div>
+        <!-- logo end -->
+        <ul class="nav navbar-nav navbar-left in">
+            <li><a href="javascript:;" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+        </ul>
+         
+        
+        <!-- start mobile menu -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span></span>
+        </a>
+       <!-- end mobile menu -->
+        <!-- start header menu -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- start notification dropdown -->
+                 <!-- start manage user dropdown -->
+                 <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <img alt="" class="img-circle " src="assets/img/dp.jpg" />
+                        <span class="username username-hide-on-mobile"> {{loginData?.nom }} {{loginData?.prenom}} </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default animated jello">
+                        <li>
+                            <a href="/profile">
+                                <i class="icon-user"></i> Profile </a>
+                        </li>
+                      
+                        <li>
+                            <a (click)="logOut()">
+                                <i class="icon-logout"></i>Deconnexion</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- end manage user dropdown -->
+                <li class="dropdown dropdown-quick-sidebar-toggler">
+                     <a id="headerSettingButton" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+                       <i class="material-icons">settings</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <!-- end header -->
+  <!-- start page container -->
+  <div class="page-container">
+     <!-- start sidebar menu -->
+     <div class="sidebar-container" >
+         <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+            <div id="remove-scroll">
+                <ul class="sidemenu page-header-fixed p-t-20" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                    <li class="sidebar-toggler-wrapper hide">
+                        <div class="sidebar-toggler">
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="sidebar-user-panel">
+                        <div class="user-panel">
+                            <div class="row">
+                                    <div class="sidebar-userpic">
+                                        <img src="assets/img/dp.jpg" class="img-responsive" alt=""> </div>
+                                </div>
+                                <div class="profile-usertitle">
+                                    <div class="sidebar-userpic-name"> {{loginData?.nom }} {{loginData?.prenom}} </div>
+                                    <div class="profile-usertitle-job">{{loginData?.profile.libelle }}</div>
+                                </div>
+                                <div class="sidebar-userpic-btn">
+                                 
+                                </div>
+                        </div>
+                    </li>
+                   
+              
+                    <li class="nav-item" *ngIf="loginData.profile.libelle=='SUPERADMIN'">
+                        <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">group</i>
+                            <span class="title">Gestion Administrateurs</span>
+                            <span class="arrow"></span>
+                            
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="/addAdmin" class="nav-link ">
+                                <i class="material-icons">add</i>
+                                    <span class="title">Ajout Admin</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/listAdmins" class="nav-link ">
+                                <i class="material-icons">assignment</i>
+                                    <span class="title">  Liste Admin</span>
+                                </a>
+                            </li>
+                         
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
+                      <i class="material-icons">group</i>
+                        <span class="title">Gestion Utilisateurs</span>
+                        <span class="arrow"></span>
+                        
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="/addUsers" class="nav-link ">
+                              <i class="material-icons">add</i>
+                                <span class="title">Ajout Utilisateur</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/listUsers" class="nav-link ">
+                              <i class="material-icons">assignment</i>
+                                <span class="title">   Liste Utilisateur</span>
+                            </a>
+                        </li>
+                     
+                    </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link nav-toggle">
+                    <i class="material-icons">school</i>
+                      <span class="title">Gestion Promotions</span>
+                      <span class="arrow"></span>
+                      
+                  </a>
+                  <ul class="sub-menu">
+                      <li class="nav-item">
+                          <a href="addPromotion" class="nav-link ">
+                            <i class="material-icons">add</i>
+                              <span class="title">  Ajout Promotion</span>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="listPromotion" class="nav-link ">
+                            <i class="material-icons">assignment</i>
+                              <span class="title">  Liste Promotion</span>
+                          </a>
+                      </li>
+                   
+                  </ul>
+              </li>
+              <li class="nav-item">
+                        <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">description</i>
+                            <span class="title">Pointage</span>
+                            <span class="arrow"></span>
+                            
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item">
+                                <a href="/listPointage" class="nav-link ">
+                                    <span class="title">Afficher Pointage</span>
+                                </a>
+                            </li>  
+                        </ul>
+                    </li>
+                  <li class="nav-item">
+                    <a href="/log" class="nav-link nav-toggle">
+                      <i class="material-icons">event</i>
+                        <span class="title">Log</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     <!-- end sidebar menu -->
 			<!-- start page content -->
             <div class="page-content-wrapper">
 				
@@ -37,7 +214,7 @@
 								<div class="panel-body">
 									<h3>  Liste par jour</h3>
                                 
-									<input type="days" [(ngModel)]="date" name="date">
+									<input type="date" [(ngModel)]="date" name="date">
                                     <button class="button" (click)="listJour(date)">Valider</button> <br>
                                     <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
 										<div class="progress-bar progress-bar-purple width-100" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
@@ -51,7 +228,7 @@
 							<div class="card">
 								<div class="panel-body">
 									<h3>Liste par semaine</h3>
-                                    <input type="" [(ngModel)]="date" name="date">
+                                    <input type="date" [(ngModel)]="date" name="date">
                                     <button (click)="listSemaine(date)">Valider</button> <br>
 									<div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
 										<div class="progress-bar progress-bar-purple width-100" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
@@ -63,7 +240,7 @@
 								<div class="card ">
 									<div class="panel-body">
 										<h3>Liste par mois</h3>
-                                        <input type="month" [(ngModel)]="date" name="date">
+                                        <input type="date" [(ngModel)]="date" name="date">
                                         <button (click)="listMois(date)">Valider</button> <br>
 										<div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
 											<div class="progress-bar progress-bar-cyan width-100" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
@@ -72,20 +249,53 @@
 								</div>
 							</div>
 						</div>
+                        
 					<div class="row">
+                   
 						<div class="col-md-12">
-							<div class="card card-box">
-								<div class="card-head">
-									<header>Liste Pointage Globale</header>
-									<div class="tools">
-										<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                            <div class="card-body ">
+                                <div class="card-body ">
+									<div class="row p-b-20">
+										<div class="col-md-6 col-sm-6 col-6">
+											<!-- <div class="btn-group">
+												<a href="/addAdmin" id="addRow" class="btn btn-info">
+													Ajouter  <i class="fa fa-plus"></i>
+												</a>
+											</div> -->
+										</div>
+										<div class="col-md-6 col-sm-6 col-6">
+											<div class="btn-group pull-right">
+												<a class="btn deepPink-bgcolor  btn-outline dropdown-toggle" data-toggle="dropdown">Exporter
+													<i class="fa fa-angle-down"></i>
+												</a>
+												<ul class="dropdown-menu pull-right">
+													<li>
+														<a onclick="window.print()">
+															<i class="fa fa-print"></i> Imprimer </a>
+													</li>
+													<li>
+														<a (click)="downloadPdf()">
+															<i class="fa fa-file-pdf-o"></i> Exporter en PDF </a>
+													</li>
+													<li>
+														<a (click)="exportexcel()">
+															<i class="fa fa-file-excel-o"></i> Exporter en Excel </a>
+													</li>
+												</ul>
+											</div>
+										</div>
 									</div>
-								</div>
-								<div class="card-body ">
+                                    <div class="card-head">
 									
-									
+                                        <div class="tools">
+                                            <!-- Search form -->
+                                            <div class="md-form mt-0">
+                                                <input class="form-control mr-sm-2 justify-content-end" type="text"   [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+                                            </div>
+                                        </div>
+                                    </div>
 									<div class="table-scrollable">
+                                        <header style="text-align: center;">Liste des pointages</header>
 									<table class="table table-hover table-checkable order-column full-width" id="example4">
 										<thead>
 											<tr>
@@ -125,14 +335,19 @@
 
 										
 											
+											<script>
+                                                function printContent(el){
+                                                    var restorepage = document.body.innerHTML;
+                                                    var printcontent = document.getElementById(el).innerHTML;
+                                                    document.body.innerHTML = printcontent;
+                                                    window.print();
+                                                    document.body.innerHTML = restorepage;
+                                                }
+                                                </script>
 											
 										</tbody>
 									</table>
-									<div class="text-center">
-										<button type="button" class="btn btn-primary"><a (click)="exportexcel()">
-											Telecharger
-										</a></button>
-								  </div>
+									
 									
 					
 									</div>
@@ -140,6 +355,7 @@
 								</div>
 								
 							</div>
+                        </div>
 						</div>
 						
 					</div>

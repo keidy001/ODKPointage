@@ -16,6 +16,7 @@ export class ListPointageComponent implements OnInit {
   date : any;
   loginData :any
   fileName = "listeAdmin.xlsx";
+  searchText : any
   constructor(
     private serviceAdmin: UsersService,
     private datepipe: DatePipe,

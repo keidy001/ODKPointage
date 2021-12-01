@@ -188,7 +188,7 @@
 		<div class="col-md-12">
 			<div class="card card-box">
 				<div class="card-head">
-					<header>Liste des Utlisateurs</header>
+					
 					<div class="tools">
 						<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
 						<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -210,7 +210,7 @@
                                 </a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <a href="javascript:;">
+                                        <a onclick="window.print()">
                                             <i class="fa fa-print"></i> Imprimer </a>
                                     </li>
                                     <li>
@@ -226,6 +226,7 @@
                         </div>
 					</div>
 					<div class="table-scrollable">
+                        <header style="text-align: center;" >Liste des Utlisateurs</header>
 					<table class="table table-hover table-checkable order-column full-width" id="example4">
 						<thead>
 							<tr>
@@ -235,8 +236,8 @@
 								<th class="center"> Email </th>
 								<th class="center"> Téléphone </th>
 								<th class="center"> Type </th>
-								<th class="center"> Etat </th>
-								<th class="center"> Action </th>
+								<th class="etat center"> Etat </th>
+								<th class=" action center"> Action </th>
 							</tr>
 						</thead>
 						<tbody>
@@ -246,13 +247,13 @@
 								</td>
 								<td class="center">{{users.nom}}</td>
 								<td class="center">{{users.prenom}}</td>
-								<td class="center"><a href="mailto:{{users.email}}">{{users.email}}</a></td>
+								<td class="center">{{users.email}}</td>
 								<td class="center">{{users.telephone}}</td>
 								<td class="center">{{users.Type}}</td>
-								<td class="center">
+								<td class="etat">
 									<span class="label label-sm label-success">{{users.etat}} </span>
 								</td>
-								<td class="center">
+								<td class=" td center">
 									<a  class="btn btn-tbl-edit btn-xs" routerLink="/updateUser/{{users.id}}">
 										<i class="fa fa-pencil"></i>
 									</a>
@@ -261,7 +262,15 @@
 									</button>
 								</td>
 							</tr>
-							
+							<script>
+                                function printContent(el){
+                                    var restorepage = document.body.innerHTML;
+                                    var printcontent = document.getElementById(el).innerHTML;
+                                    document.body.innerHTML = printcontent;
+                                    window.print();
+                                    document.body.innerHTML = restorepage;
+                                }
+                                </script>
 						</tbody>
 					</table>
 					</div>
