@@ -188,15 +188,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card card-box">
-								<div class="card-head">
-									<header>Liste des Administrateurs</header>
-									<div class="tools">
-										<!-- Search form -->
-										<div class="md-form mt-0">
-                                            <input class="form-control mr-sm-2" type="text"   [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
-                                        </div>
-									</div>
-								</div>
+								
 								<div class="card-body ">
 									<div class="row p-b-20">
 										<div class="col-md-6 col-sm-6 col-6">
@@ -228,8 +220,18 @@
 											</div>
 										</div>
 									</div>
-									<div class="table-scrollable">
-									<table class="table table-hover table-checkable order-column full-width" id="example4">
+                                    <div class="card-head">
+									
+                                        <div class="tools">
+                                            <!-- Search form -->
+                                            <div class="md-form mt-0">
+                                                <input class="form-control mr-sm-2" type="text"   [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="table-scrollable" id="example4">
+                                        <header style="text-align: center;" ><strong>Liste des Administrateurs</strong> </header>
+									<table class="table table-hover table-checkable order-column full-width" >
 										<thead>
 											<tr>
 												<th class="center"></th>
