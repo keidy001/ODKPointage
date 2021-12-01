@@ -196,99 +196,116 @@
                                 <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
                             </div>
                         </div>
-                        <div class="card-body" id="bar-parent2">
-                            <form  id="form_sample_2" class="form-horizontal" novalidate="novalidate" #addForm="ngForm">
-                                <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="prenom">Prénom</label>
-                                <input type="text" class="form-control" ngModel name="prenom" >
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="nom">Nom</label>
-                                <input type="text" class="form-control" ngModel name="nom" >
-                            </div>
-                     </div>
-                 <div class="form-row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" ngModel name="email" >
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="adresse">Adresse</label>
-                            <input type="text" class="form-control" ngModel name="adresse" >
-                        </div>                                          
-                         </div>         
-                       </div>
-                       <div class="form-row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="profile">Profile</label>
-                            <select id="inputStat" class="form-control" ngModel name="profile" >
-                                <option></option>
-                                <option value="1">SuperAdmin</option>
-                                <option value="2">Admin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" class="form-control" id="tel" ngModel name="telephone" >
-                        </div>
-                     </div>            
-                       </div>
-            
-                       <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="login">Login</label>
-                    <input type="text" class="form-control" ngModel name="login">
-                  </div>
-                 <div class="form-group col-md-6">
-                    <label for="motDePass">Mot de passe</label>
-                    <input type="text" class="form-control" ngModel name="motDePass" >
-                  </div>
-                  </div>
-            
-            <div class="form-row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="genre">Genre</label>
-                        <select id="inputState" class="form-control" ngModel name="genre">
-                            <option></option>
-                            <option value="HOMME">Homme</option>
-                            <option value="FEMME">Femme</option>
-                        </select>
-                    </div>
-                </div>
+                        
+                        <div class="card m-3">
+                            <div class="card-body">
+                                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-row">
+                                        <div class="form-group col-5">
+                                            <label>Prenom</label>
+                                            <input type="text" formControlName="prenom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }" />
+                                            <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                                <div *ngIf="f.prenom.errors.required">Prenom est obligatoire</div>
+                                            </div>
+                                        </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="etat">Etat</label>
-                        <select id="inputState" class="form-control" ngModel name="etat">
-                            <option></option>
-                            <option value="ACTIVER">Activer</option>
-                            <option value="DESACTIVER">Désactiver</option>
-                        </select>
-                    </div>
-                </div>
-              
-            </div>
-             
-            <input type="hidden" class="form-control" [(ngModel)]= "loginData.id" name="userId"  >
+                                        <div class="form-group col-5">
+                                            <label>Nom</label>
+                                            <input type="text" formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" />
+                                            <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                                                <div *ngIf="f.nom.errors.required">Nom est obligatoire </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="form-row">
+                                        <div class="form-group col-5">
+                                            <label>Adresse</label>
+                                            <input type="text" formControlName="adresse" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+                                            <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                                                <div *ngIf="f.adresse.errors.required">Adresse est obligatoire</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-5">
+                                            <label>Telephone</label>
+                                            <input type="number" formControlName="telephone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" />
+                                            <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                                <div *ngIf="f.telephone.errors.required">Telephone est obligatoire</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col">
+                                            <label>Etat</label>
+                                            <select formControlName="etat" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.etat.errors }">
+                                                <option value=""></option>
+                                                <option value="ACTIVER">Activer</option>
+                                                <option value="DESACTIVER">Desactiver</option>
+                                                
+                                            </select>
+                                            <div *ngIf="submitted && f.etat.errors" class="invalid-feedback">
+                                                <div *ngIf="f.etat.errors.required">Etat est obligatoire</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group col-5">
+                                            <label>Genre</label>
+                                            <input type="text" formControlName="genre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.genre.errors }" />
+                                            <div *ngIf="submitted && f.genre.errors" class="invalid-feedback">
+                                                <div *ngIf="f.genre.errors.required">Genre est obligatoire</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email est obligatoire</div>
+                                            <div *ngIf="f.email.errors.email"><Em>Email doit être valide</Em></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group col">
+                                        <label>Profile</label>
+                                        <select formControlName="profile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.profile.errors }">
+                                            <option value=""></option>
+                                            <option value="1">SuperAdmin</option>
+                                            <option value="1">Admin</option>
+                                            
+                                        </select>
+                                        <div *ngIf="submitted && f.profile.errors" class="invalid-feedback">
+                                            <div *ngIf="f.profile.errors.required">Profile est obligatoire</div>
+                                        </div>
+                                    </div>
+                                    <div class ="row">
+                                        <div class="form-group col">
+                                            <label>Login</label>
+                                            <input type="login" formControlName="login" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.login.errors }" />
+                                            <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+                                                <div *ngIf="f.login.errors.required">Login est obligatoire</div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="form-group col">
+                                            <label>Mot de Passe</label>
+                                            <input type="motDePass" formControlName="motDePass" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.motDePass.errors }" />
+                                            <div *ngIf="submitted && f.motDePass.errors" class="invalid-feedback">
+                                                <div *ngIf="f.motDePass.errors.required">Mot de Passe est obligatoire</div>
+                                                
+                                            </div>
+                                        </div>
 
-            <div class="form-group">
-                <div class="offset-md-3 col-md-9" style="padding: 30px;">
-                <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>
-              
-                     <button type="submit" class="btn btn-success ms-5" (click)="ajouterAdmin(addForm)">Valider</button>
-                    </div>
-                    </div>
-                                
-                            </form>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <button class="btn btn-primary mr-1">Enregistrer</button>
+                                        <button class="btn btn-secondary" type="reset" (click)="onReset()">Annuler</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <!-- CSS only -->
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
                     </div>
                 </div>
             </div>
