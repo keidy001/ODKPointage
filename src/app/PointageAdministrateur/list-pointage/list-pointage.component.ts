@@ -16,11 +16,12 @@ export class ListPointageComponent implements OnInit {
   date : any;
   loginData :any
   fileName = "listeAdmin.xlsx";
+  searchText : any
   constructor(
     private serviceAdmin: UsersService,
     private datepipe: DatePipe,
     private router:Router,
-    
+
     ) { }
 
   ngOnInit(): void {
@@ -45,8 +46,8 @@ listSemaine(date:any){
   this.serviceAdmin.listParSemaine(date).subscribe((result)=>
   { 
     return this.listPointage=result;
-  
-  
+
+
   })
   }
   listMois(date:any){
@@ -54,8 +55,8 @@ listSemaine(date:any){
     this.serviceAdmin.listParMois(date).subscribe((result)=>
     { console.log(this.date);
       return this.listPointage=result;
-    
-    
+
+
     })
     }
 
@@ -69,16 +70,16 @@ listSemaine(date:any){
      /* table id is passed over here */
      let element = document.getElementById('example4'); 
      const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
-  
+
      // generate workbook and add the worksheet 
      const wb: XLSX.WorkBook = XLSX.utils.book_new();
      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-  
+
      // save to file 
      XLSX.writeFile(wb, this.fileName);
-  
+
   }
-  
+
   downloadPdf(){
     var element  = document.getElementById('example4')!
     html2canvas(element).then(
@@ -92,5 +93,5 @@ listSemaine(date:any){
       }
     )
   }
-  
+
 }

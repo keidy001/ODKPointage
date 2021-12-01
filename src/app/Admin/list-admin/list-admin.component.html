@@ -205,7 +205,7 @@
 												</a>
 												<ul class="dropdown-menu pull-right">
 													<li>
-														<a (click)="imprimerPdf()">
+														<a onclick="window.print()">
 															<i class="fa fa-print"></i> Imprimer </a>
 													</li>
 													<li>
@@ -240,8 +240,8 @@
 												<th class="center"> Téléphone </th>
 												<th class="center"> Email </th>
 												<th class="center">Profile</th>
-												<th class="center">Etat</th>
-												<th class="center"> Action </th>
+												<th class="etat">Etat</th>
+												<th class="action"> Action </th>
 											</tr>
 										</thead>
 										<tbody >
@@ -258,7 +258,7 @@
 													<span class="label label-sm label-success" >{{admin.etat}} </span>
                                                     
 												</td>
-												<td class="center">
+												<td class="td">
 													<a  class="btn btn-tbl-edit btn-xs" routerLink="/updateAdmin/{{admin.id}}">
 														<i class="fa fa-pencil"></i>
 													</a>
@@ -269,7 +269,16 @@
 											</tr>
 
 										
-											
+											<script>                                               
+                                              function printContent(el){                                               
+                                                        var restorepage = document.body.innerHTML;                                 
+                                                        var printcontent = document.getElementById(el).innerHTML;                                                    
+                                                         document.body.innerHTML = printcontent;                                                    
+                                                          window.print();                                                     
+                                                          document.body.innerHTML = restorepage;                                               
+                                                            }                                                 
+                                              </script>
+
 											
 										</tbody>
 									</table>
