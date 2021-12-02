@@ -13,9 +13,9 @@
     border-radius: 40px 40px 40px 40px;
 }
 
-    .log input, .pass input{
+    .log input, .pass input,select{
         margin-left:6% ;
-        color:white;
+        color:rgb(255, 251, 251);
         font-size:20px;
         width: 370PX;
         float:left;
@@ -23,6 +23,9 @@
         margin-bottom:35px;
         border: solid white 1px;
         
+    }
+    select{
+        background-color: rgba(133, 127, 114, 0.788);
     }
     .button{
         margin-left:6% ;

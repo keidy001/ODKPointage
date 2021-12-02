@@ -15,11 +15,13 @@ export class UsersService {
 
      //-------------------------------------------------------Login APi service --------------
 
-     login(login :String,password : String){
+     login1(login :String,password : String){
       return this.http.get(this.url+"/admin/authentificationAdmin?login="+login+"&password="+password)
     }
 
-
+    login2(login :String,password : String){
+      return this.http.get(this.url+"/utilisateurs/login?login="+login+"&password="+password)
+    }
     //-------------------------------------------------------Admin  APi service --------------
 
     getAllAdmin(){
@@ -115,10 +117,15 @@ listParMois(month:any){
  //-------------------------------------------------------Logs APi service --------------
 
 getAlllog(){
+  
   return this.http.get(this.url+"/log/listeLog");
 }
 getLogParActeur(id : number,acteur: any){
   return this.http.get(this.url+"/log/afficherParActeur/"+id+"&"+acteur);
 }
 afficherListPointage(){   return this.http.get(this.url+("/pointage/listPointage")); }
+
+userPOintage(id:any){
+  return this.http.post(this.url+"/pointage/ajoutPointage/", id);
+}
 }

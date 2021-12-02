@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { LoginComponent } from './login/login.component';
@@ -22,9 +22,12 @@ import { LogParAdminComponent } from './log/logAdmin/log-par-admin/log-par-admin
 import { LogParSuperAdminComponent } from './log/logSuper/log-par-super-admin/log-par-super-admin.component';
 import { ListelogComponent } from './log/listelog/listelog.component';
 import { UserSpaceComponent } from './user-space/user-space.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
+
 
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent},
+  { path: 'accueil', component: AccueilComponent,canActivate:[GuardGuard]},
   { path: 'login',component: LoginComponent},
 
   { path: 'listUsers',component:ListUsersComponent,canActivate:[GuardGuard]},
@@ -39,25 +42,27 @@ const routes: Routes = [
   { path: 'detailUser/:id',component:DetailUserComponent,canActivate:[GuardGuard]},
   { path: 'updateUser/:id',component:UpdateUserComponent,canActivate:[GuardGuard]},
   { path: 'listAdmins', component: ListAdminComponent,canActivate:[GuardGuard]},
-  { path: 'listPointage', component: ListPointageComponent},
-  { path: 'detailPointage/:id', component: DetailPointageComponent},
-  { path: 'listUsers',component:ListUsersComponent},
-  { path: 'addUsers', component:AddUsersComponent},
-  { path: 'addAdmin',component:AddAdminComponent},
-  { path: 'addPromotion',component:AddPromotionComponent},
-  {path: 'listPromotion',component:ListePromotionComponent},
-  {path: 'detailPromotion/:id',component:DetailPromotionComponent},
-  {path: 'updatePromotion/:id',component:UpdatePromotionComponent},
-  { path: 'detailAdmin/:id',component:DetailAdminComponent},
-  { path: 'updateAdmin/:id',component:UpdateAdminComponent},
-  { path: 'detailUser/:id',component:DetailUserComponent},
-  { path: 'updateUser/:id',component:UpdateUserComponent},
-  { path: 'listAdmins', component:ListAdminComponent},
-  { path: 'logUtilisateur', component:LogParUtilisateurComponent,},
-  { path: 'logAdmin', component:LogParAdminComponent,},
-  { path: 'logSuper', component:LogParSuperAdminComponent ,},
-  { path: 'log', component:ListelogComponent ,},
-  {path:'userSpace', component:UserSpaceComponent},
+  { path: 'listPointage', component: ListPointageComponent,canActivate:[GuardGuard]},
+  { path: 'detailPointage/:id', component: DetailPointageComponent,canActivate:[GuardGuard]},
+  { path: 'listUsers',component:ListUsersComponent,canActivate:[GuardGuard]},
+  { path: 'addUsers', component:AddUsersComponent,canActivate:[GuardGuard]},
+  { path: 'addAdmin',component:AddAdminComponent,canActivate:[GuardGuard]},
+  { path: 'addPromotion',component:AddPromotionComponent,canActivate:[GuardGuard]},
+  {path: 'listPromotion',component:ListePromotionComponent,canActivate:[GuardGuard]},
+  {path: 'detailPromotion/:id',component:DetailPromotionComponent,canActivate:[GuardGuard]},
+  {path: 'updatePromotion/:id',component:UpdatePromotionComponent,canActivate:[GuardGuard]},
+  { path: 'detailAdmin/:id',component:DetailAdminComponent,canActivate:[GuardGuard]},
+  { path: 'updateAdmin/:id',component:UpdateAdminComponent,canActivate:[GuardGuard]},
+  { path: 'detailUser/:id',component:DetailUserComponent,canActivate:[GuardGuard]},
+  { path: 'updateUser/:id',component:UpdateUserComponent,canActivate:[GuardGuard]},
+  { path: 'listAdmins', component:ListAdminComponent,canActivate:[GuardGuard]},
+  { path: 'logUtilisateur', component:LogParUtilisateurComponent,canActivate:[GuardGuard]},
+  { path: 'logAdmin', component:LogParAdminComponent,canActivate:[GuardGuard]},
+  { path: 'logSuper', component:LogParSuperAdminComponent,canActivate:[GuardGuard]},
+  { path: 'log', component:ListelogComponent,canActivate:[GuardGuard]},
+  { path:'userSpace', component:UserSpaceComponent,canActivate:[GuardGuard]},
+  { path: 'profile', component:ProfileComponent,canActivate:[GuardGuard]},
+  { path: 'profileUser', component:ProfileUserComponent,canActivate:[GuardGuard]},
   { path: '**', redirectTo: '/login', pathMatch:'full'},
  
 ];

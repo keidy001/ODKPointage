@@ -27,6 +27,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ConfirmationDialogComponent } from './confirmationDialog/confirmation-dialog.component';
 import { ConfirmationDialogService } from './confirmationDialog/confirmation-dialog.service';
 import { UserSpaceComponent } from './user-space/user-space.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ListelogComponent } from './log/listelog/listelog.component';
+import { LogParUtilisateurComponent } from './log/logUtilisateur/log-par-utilisateur/log-par-utilisateur.component';
+import { LogParAdminComponent } from './log/logAdmin/log-par-admin/log-par-admin.component';
+import { LogParSuperAdminComponent } from './log/logSuper/log-par-super-admin/log-par-super-admin.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
+
 
 
 
@@ -53,8 +60,13 @@ import { UserSpaceComponent } from './user-space/user-space.component';
     ListPointageComponent,
     DetailPointageComponent,
     ConfirmationDialogComponent,
-    UserSpaceComponent
-    
+    UserSpaceComponent,
+    ProfileComponent,
+    ListelogComponent,
+    LogParUtilisateurComponent,
+    LogParAdminComponent,
+    LogParSuperAdminComponent,
+    ProfileUserComponent,
     
     
  

@@ -39,4 +39,8 @@ export class UpdatePromotionComponent implements OnInit {
         })
       })
     }
+    logOut(){
+      localStorage.removeItem('isLogin');
+    this.router.navigateByUrl('/');
+  }
 }

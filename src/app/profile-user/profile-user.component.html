@@ -1,4 +1,5 @@
 
+
 <!-- start header -->
 <div class="page-header navbar navbar-fixed-top" *ngIf="loginData">
     <div class="page-header-inner ">
@@ -32,7 +33,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default animated jello">
                         <li>
-                            <a href="/profile">
+                            <a href="/profileUser">
                                 <i class="icon-user"></i> Profile </a>
                         </li>
                       
@@ -73,103 +74,32 @@
                                 </div>
                                 <div class="profile-usertitle">
                                     <div class="sidebar-userpic-name"> {{loginData?.nom }} {{loginData?.prenom}} </div>
-                                    <div class="profile-usertitle-job">{{loginData?.profile.libelle }}</div>
+                                    <div class="profile-usertitle-job">{{loginData?.Type }}</div>
                                 </div>
                                 <div class="sidebar-userpic-btn">
                                  
                                 </div>
                         </div>
                     </li>
-                   
-              
-                    <li class="nav-item" *ngIf="loginData.profile.libelle=='SUPERADMIN'">
-                        <a href="#" class="nav-link nav-toggle">
-                        <i class="material-icons">group</i>
-                            <span class="title">Gestion Administrateurs</span>
-                            <span class="arrow"></span>
-                            
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="/addAdmin" class="nav-link ">
-                                <i class="material-icons">add</i>
-                                    <span class="title">Ajout Admin</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/listAdmins" class="nav-link ">
-                                <i class="material-icons">assignment</i>
-                                    <span class="title">  Liste Admin</span>
-                                </a>
-                            </li>
-                         
-                        </ul>
-                    </li>
+
                     <li class="nav-item">
-                    <a href="#" class="nav-link nav-toggle">
-                      <i class="material-icons">group</i>
-                        <span class="title">Gestion Utilisateurs</span>
-                        <span class="arrow"></span>
-                        
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="nav-item">
-                            <a href="/addUsers" class="nav-link ">
-                              <i class="material-icons">add</i>
-                                <span class="title">Ajout Utilisateur</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/listUsers" class="nav-link ">
-                              <i class="material-icons">assignment</i>
-                                <span class="title">   Liste Utilisateur</span>
-                            </a>
-                        </li>
-                     
-                    </ul>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link nav-toggle">
-                    <i class="material-icons">school</i>
-                      <span class="title">Gestion Promotions</span>
-                      <span class="arrow"></span>
-                      
-                  </a>
-                  <ul class="sub-menu">
-                      <li class="nav-item">
-                          <a href="addPromotion" class="nav-link ">
-                            <i class="material-icons">add</i>
-                              <span class="title">  Ajout Promotion</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="listPromotion" class="nav-link ">
-                            <i class="material-icons">assignment</i>
-                              <span class="title">  Liste Promotion</span>
-                          </a>
-                      </li>
-                   
-                  </ul>
-              </li>
-              <li class="nav-item">
-                        <a href="#" class="nav-link nav-toggle">
-                        <i class="material-icons">description</i>
-                            <span class="title">Pointage</span>
-                            <span class="arrow"></span>
-                            
+                        <a href="/userSpace" class="nav-link nav-toggle">
+                          <i class="material-icons">description</i>
+                            <span class="title">Mes Pointage</span>
                         </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item">
-                                <a href="/listPointage" class="nav-link ">
-                                    <span class="title">Afficher Pointage</span>
-                                </a>
-                            </li>  
-                        </ul>
                     </li>
-                  <li class="nav-item">
-                    <a href="/log" class="nav-link nav-toggle">
-                      <i class="material-icons">event</i>
-                        <span class="title">Log</span>
+              
+                    <li class="nav-item">
+                        <a href="/goupe" class="nav-link nav-toggle">
+                          <i class="material-icons">group</i>
+                            <span class="title">Groupe</span>
+                        </a>
+                    </li>
+                  
+                <li class="nav-item">
+                    <a href="/maPromotion" class="nav-link nav-toggle">
+                      <i class="material-icons">school</i>
+                        <span class="title">Ma Promotions</span>
                     </a>
                 </li>
                 </ul>
@@ -180,108 +110,72 @@
 
 
 
-     
- 
-			<!-- start page content -->
+
+
+<!-- start page content -->
+<div class="row">
+    <div class="col-md-12">     
+    </div>
+</div>
+
+            <!-- end page content -->
             <div class="page-content-wrapper">
                 <div class="page-content">
-                   
-                   <!-- start widget -->
-	                  <div class="row">
-		                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-		                        <div class="card" >
-		                           <a><div class="panel-body">
-		                                <h3 routerLink="/listAdmins">Administrateurs</h3>
-		                                <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-		                                    <div class="progress-bar progress-bar-green width-100" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-		                                </div>
-		                                <span class="text-small margin-top-10 full-width"></span> </div>
-									</a> 
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-		                        <div class="card">
-		                          <a> <div class="panel-body">
-		                                <h3 routerLink="/listUsers">Utilisateurs</h3>
-		                                <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-		                                    <div class="progress-bar progress-bar-orange width-100" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
-		                                </div>
-		                                <span class="text-small margin-top-10 full-width"></span> </div>
-		                       </a> 
-							 </div>
-		                    </div>
-		                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-		                        <div class="card">
-									<a>    <div class="panel-body">
-		                                <h3 routerLink="/listPointage">Pointages</h3>
-		                                <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
-		                                    <div class="progress-bar progress-bar-purple width-100" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
-		                                </div>
-		                                <span class="text-small margin-top-10 full-width"></span> </div>
-									</a> 
-								 </div>
-		                    </div>
-			                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-			                        <div class="card ">
-									<a>      <div class="panel-body">
-			                                <h3 routerLink="/log">Logs</h3>
-			                                <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
-			                                    <div class="progress-bar progress-bar-cyan width-100" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
-			                                </div>
-			                                <span class="text-small margin-top-10 full-width"></span> </div>
-										</a> 
-									  </div>
-								</div>
-			        		</div>
-					<!-- end widget -->
-					<div class="row">
-						<div class="col-lg-6 col-md-12 col-sm-12 col-12">
-							<div class="card card-box">
-	                              <div class="card-head">
-	                                  <header>Statistique</header>
-	                                  <div class="tools">
-	                                    <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-										<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
-	                                 </div>
-	                              </div>
-	                              <div class="card-body no-padding height-9">
-									<div class="row">
-									    <canvas id="bar-chart"></canvas>
-									</div>
-								</div>
-	                          </div>
-				            </div>
-				            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-								<div class="card card-box">
-		                              <div class="card-head">
-		                                  <header>Agenda</header>
-		                                  <div class="tools">
-		                                    <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-											<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-											<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
-		                                 </div>
-		                              </div>
-		                              <div class="card-body no-padding height-9">
-										<div class="row">
-										    <canvas id="myChart"></canvas>
-										</div>
-									</div>
-		                          </div>
-				            </div>
-						</div>
-				
-                    
-	        
-                </div>
-            </div>
-            <!-- end page content -->
-           
+                  
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center align-itms-center">
+                            <!-- BEGIN PROFILE SIDEBAR -->
+                            <div class="profile-sidebar">
+                                <div class="card card-topline-aqua">
+                                    <div class="card-body no-padding height-9">
+                                        <div class="row">
+                                            <div class="profile-userpic">
+                                                <img src="assets/img/dp.jpg" class="img-responsive" alt=""> </div>
+                                        </div>
+                                    
+                                        <ul class="list-group list-group-unbordered">
+                                            <li class="list-group-item">
+                                                <b>Nom</b> <a class="pull-right">{{user.nom}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Prenom</b> <a class="pull-right">{{user.prenom}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Adresse</b> <a class="pull-right">{{user.adresse}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Email</b> <a class="pull-right">{{user.email}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Login</b> <a class="pull-right">{{user.login}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Telephone</b> <a class="pull-right">{{user.telephone}}</a>
+                                            </li>
+                                        </ul>
+                                        <!-- END SIDEBAR USER TITLE -->
+                                        <!-- SIDEBAR BUTTONS -->
+                                       
+                                        <!-- END SIDEBAR BUTTONS -->
+                                    </div>
+                                </div>
+                                
+                                </div>
+                            </div>
+                            <!-- END BEGIN PROFILE SIDEBAR -->
+                            <!-- BEGIN PROFILE CONTENT -->
+                        
+                
+                                                    
+                                <!-- END PROFILE CONTENT -->
+                            </div>
+                        </div>
+                    </div>
+                <!-- end page content -->
 
 
 
-
-
+                
              <!-- start chat sidebar -->
 <div class="chat-sidebar-container" data-close-on-body-click="false" *ngIf="loginData">
     <div class="chat-sidebar">
