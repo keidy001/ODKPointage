@@ -188,6 +188,7 @@
                             <div class="progress-bar progress-bar-orange width-100" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <span class="text-small margin-top-10 full-width"></span> </div>
+<<<<<<< HEAD
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
@@ -200,6 +201,20 @@
                         <span class="text-small margin-top-10 full-width"></span> </div>
                 </div>
             </div>
+=======
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="card">
+                    <div class="panel-body">
+                        <h3  routerLink="/logSuper">Par SuperAdmin</h3>
+                        <div class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active" >
+                            <div class="progress-bar progress-bar-purple width-100" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="text-small margin-top-10 full-width"></span> </div>
+                </div>
+            </div>
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="card ">
                         <div class="panel-body">
@@ -217,9 +232,16 @@
         <div class="card-head">
             <header>Liste des Logs Admin</header>
             <div class="tools">
+<<<<<<< HEAD
                 <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                 <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
                 <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+=======
+                 <!-- Search form -->
+                 <div class="md-form mt-0">
+                    <input class="form-control mr-sm-2" type="text"   [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+                </div>
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
             </div>
         </div>
         <div class="card-body ">
@@ -263,7 +285,11 @@
                 </thead>
                 <tbody >
                     
+<<<<<<< HEAD
                     <tr class="odd gradeX" *ngFor="let log Of logAdmin">
+=======
+                    <tr class="odd gradeX" *ngFor="let log Of logAdmin |  filter:searchText">
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
                         
                         <td class="user-circle-img"><a>
                                 <img src="../../../assets/images/odk_icon.png" width="50px" alt="">

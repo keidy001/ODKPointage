@@ -23,7 +23,10 @@ import { LogParSuperAdminComponent } from './log/logSuper/log-par-super-admin/lo
 import { ListelogComponent } from './log/listelog/listelog.component';
 import { UserSpaceComponent } from './user-space/user-space.component';
 import { ProfileComponent } from './profile/profile.component';
+<<<<<<< HEAD
 import { ProfileUserComponent } from './profile-user/profile-user.component';
+=======
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
 
 
 const routes: Routes = [
@@ -62,7 +65,10 @@ const routes: Routes = [
   { path: 'log', component:ListelogComponent,canActivate:[GuardGuard]},
   { path:'userSpace', component:UserSpaceComponent,canActivate:[GuardGuard]},
   { path: 'profile', component:ProfileComponent,canActivate:[GuardGuard]},
+<<<<<<< HEAD
   { path: 'profileUser', component:ProfileUserComponent,canActivate:[GuardGuard]},
+=======
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
   { path: '**', redirectTo: '/login', pathMatch:'full'},
  
 ];

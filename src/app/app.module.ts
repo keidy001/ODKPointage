@@ -32,7 +32,10 @@ import { ListelogComponent } from './log/listelog/listelog.component';
 import { LogParUtilisateurComponent } from './log/logUtilisateur/log-par-utilisateur/log-par-utilisateur.component';
 import { LogParAdminComponent } from './log/logAdmin/log-par-admin/log-par-admin.component';
 import { LogParSuperAdminComponent } from './log/logSuper/log-par-super-admin/log-par-super-admin.component';
+<<<<<<< HEAD
 import { ProfileUserComponent } from './profile-user/profile-user.component';
+=======
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
 
 
 
@@ -66,7 +69,10 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
     LogParUtilisateurComponent,
     LogParAdminComponent,
     LogParSuperAdminComponent,
+<<<<<<< HEAD
     ProfileUserComponent,
+=======
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
     
     
  

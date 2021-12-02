@@ -28,6 +28,7 @@ loginInfo:any;
           if(res){
             console.log(res);
             this.loginInfo = res;
+<<<<<<< HEAD
             localStorage.setItem('isLogin', JSON.stringify(this.loginInfo));
             let userInfo = JSON.parse(localStorage['isLogin']);
             let data1 ={
@@ -40,6 +41,10 @@ loginInfo:any;
             this.router.navigate(["/userSpace"]);
             
             
+=======
+            this.router.navigate(["/userSpace"]);
+            localStorage.setItem('isLogin', JSON.stringify(this.loginInfo));
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
           }else {
             this.router.navigate(["/login"])
             console.log("login non connecter");
@@ -50,7 +55,10 @@ loginInfo:any;
     }
   })
 }
+<<<<<<< HEAD
 
  
 
+=======
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
 }

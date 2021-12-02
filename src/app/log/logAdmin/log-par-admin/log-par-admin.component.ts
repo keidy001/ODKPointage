@@ -18,6 +18,10 @@ export class LogParAdminComponent implements OnInit {
   acteur="ADMIN";
   id =1;
   fileName = "listeAdmin.xlsx";
+<<<<<<< HEAD
+=======
+  searchText: any;
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
 
   constructor(
     private service : UsersService,

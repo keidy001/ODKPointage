@@ -13,6 +13,12 @@ export class ListUsersComponent implements OnInit {
   fileName = "listeAdmin.xlsx";
   listUsers: any;
   loginData:any;
+<<<<<<< HEAD
+=======
+  searchText:any;
+ 
+
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
   constructor(public service: UsersService,
     private router:Router,
     ) { }

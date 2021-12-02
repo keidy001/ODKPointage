@@ -185,120 +185,146 @@
     <!-- start page content -->
     <div class="page-content-wrapper">
         <div class="page-content">
-
-                <div class="col-md-12 col-sm-12">
-                    <div class="card card-box">
-                        <div class="card-head">
-                            <header>Nouveau Utilisateur</header>
-                                <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" data-mdl-for="panel-button2" data-upgraded=",MaterialMenu,MaterialRipple">
-                                   <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">assistant_photo</i>Action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
-                                   <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">print</i>Another action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
-                                   <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">favorite</i>Something else here<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
-                                </ul></div>
-                        </div>
-                        <div class="card-body" id="bar-parent2">
-                            <form >
-                                <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="prenom">Prénom</label>
-                                <input type="text" class="form-control" [(ngModel)]="prenom" name="prenom">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="nom">Nom</label>
-                                <input type="text" class="form-control" [(ngModel)]="nom" name="nom">
-                            </div>
-                     </div>
-                 <div class="form-row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" [(ngModel)]="email" name="email">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Nouveau Utilisateur</header>
+                        <div class="tools">
+                            <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
+                            <a class="t-close btn-danger fa fa-times" href="/listAdmins"></a>
+                            <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="adresse">Adresse</label>
-                            <input type="text" class="form-control" [(ngModel)]="adresse" name="adresse">
-                        </div>                                          
-                         </div>         
-                       </div>
-                       <div class="form-row">
-                        <div class="col-md-6">
+                    <div class="card-body" id="bar-parent2">
+                        <form id="form_sample_2" class="form-horizontal"  [formGroup]="formuser" (ngSubmit)="(formuser)">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control"  formControlName="prenom"   [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }"/>
+                                    <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                        <div *ngIf="f.prenom.errors.required">Le champ prenom est requis</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" formControlName="nom"    [ngClass]="{ 'is-invalid': submitted && f.nom.errors }"/>
+                                    <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                                        <div *ngIf="f.nom.errors.required">le champ nom est requis</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" formControlName="email"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email is required</div>
+                                            <div *ngIf="f.email.errors.email">Email doit être valide</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="adresse">Adresse</label>
+                                        <input type="text" class="form-control"  formControlName="adresse" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+                                        <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                            <div *ngIf="f.prenom.errors.required">le champ adresse  est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="profile">Profile</label>
+                                        <select id="inputStat" class="form-control"  formControlName="profile" [ngClass]="{ 'is-invalid': submitted && f.profile.errors }">
+                                            <option></option>
+                                            <option value="1">SuperAdmin</option>
+                                            <option value="2">Admin</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.profile.errors" class="invalid-feedback">
+                                            <div *ngIf="f.profile.errors.required">Profile est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="telephone">Téléphone</label>
+                                        <input type="number" class="form-control" id="tel"   formControlName="telephone" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" />
+                                    </div>
+                                    <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                        <div *ngIf="f.telephone.errors.required">Telephone est requis</div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="login">Login</label>
+                                    <input type="text" class="form-control"     formControlName="login" [ngClass]="{ 'is-invalid': submitted && f.login.errors }"/>
+                                    <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+                                        <div *ngIf="f.login.errors.required">le champ login  est requis</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="motDePass">Mot de passe</label>
+                                    <input type="text" class="form-control" formControlName="motDePass"   [ngClass]="{ 'is-invalid': submitted && f.motDePass.errors }" />
+                                </div>
+                                <div *ngIf="submitted && f.motDePass.errors" class="invalid-feedback">
+                                    <div *ngIf="f.motDePass.errors.required">mot de passe est requis</div>
+                                    <div *ngIf="f.motDePass.errors.minlength">mot de passe doit être de 6 caracteres au minimum</div>
+                                </div>
+                            </div>
+    
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="genre">Genre</label>
+                                        <select id="inputState" class="form-control"   formControlName="genre"  [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
+                                            <option></option>
+                                            <option value="HOMME">Homme</option>
+                                            <option value="FEMME">Femme</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.genre.errors" class="invalid-feedback">
+                                            <div *ngIf="f.genre.errors.required">Genre est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="etat">Etat</label>
+                                        <select id="inputState" class="form-control"  formControlName="etat" [ngClass]="{ 'is-invalid': submitted && f.etat.errors }">
+                                            <option></option>
+                                            <option value="ACTIVER">Activer</option>
+                                            <option value="DESACTIVER">Désactiver</option>
+                                        </select>
+                                        <div *ngIf="submitted && f.etat.errors" class="invalid-feedback">
+                                            <div *ngIf="f.etat.errors.required">Etat est requis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- <input type="hidden" class="form-control" [(ngModel)]="loginData.id" name="userId" /> -->
+    
                             <div class="form-group">
-                                <label for="genre">Genre</label>
-                                <select id="genre" class="form-control" [(ngModel)]="genre" name="genre">
-                                    <option></option>
-                                    <option value="HOMME">HOMME</option>
-                                    <option value="FEMME">FEMME</option>
-                                </select>
+                                <div class="offset-md-3 col-md-9" style="padding: 30px">
+                                    <button type="submit" class="btn btn-success me-5" >
+                                        Enregistrer
+                                    </button>
+    
+                                    <button type="reset" class="btn btn-danger ms-5">
+                                        Réinitialiser
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" class="form-control" id="tel" [(ngModel)]="telephone" name="telephone">
-                        </div>
-                     </div>            
-                       </div>
-            
-                       <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="login">Login</label>
-                    <input type="text" class="form-control"  [(ngModel)]="login" name="login">
-                  </div>
-                 <div class="form-group col-md-6">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control"  [(ngModel)]="password" name="password">
-                  </div>
-                  </div>
-            
-            <div class="form-row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="Type" >Type Utilisateur</label>
-                        <select id="Type" class="form-control" [(ngModel)]="Type" name="Type">
-                            <option value="FORMATEUR">FORMATEUR</option>
-                            <option value="APPRENANT">APPRENANT</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="etat">Etat</label>
-                        <select id="inputState" class="form-control" [(ngModel)]="etat" name="etat">
-                            <option></option>
-                            <option value="ACTIVER">Activer</option>
-                            <option value="DESACTIVER">Désactiver</option>
-                        </select>
-                    </div>
-                </div>
-              
-            </div>
-            <div class="form-row">
-                
-                <div class="col-md-6" *ngIf="Type=='APPRENANT'">
-                    <div class="form-group"  >
-                        <label for="promotion">Promotion</label>
-                        <select id="promotion" class="form-control" [(ngModel)]="promotion" name="promotion" >
-                            <option></option>
-                            <option *ngFor="let promo of promotions" value="{{promo.id}}">{{promo.nom}}</option>
-                        </select>
-                    </div>
-                </div>
-                </div>
-            <div class="form-group">
-                <div class="offset-md-3 col-md-9" style="padding: 30px;">
-                <button type="reset" class="btn btn-danger mr-5">Réinitialiser</button>
-              
-                     <button type="submit" class="btn btn-success ms-5" (click)="ajouterUsers()">Valider</button>
-                    </div>
-                    </div>
-                                
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
             <!-- end page content -->
 
@@ -684,6 +710,393 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+            <!-- end page content -->
+
+
+
+             <!-- start chat sidebar -->
+<div class="chat-sidebar-container" data-close-on-body-click="false" *ngIf="loginData">
+    <div class="chat-sidebar">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon"  data-toggle="tab">Theme
+                    </a>
+            </li>
+            <li class="nav-item">
+                <a href="#quick_sidebar_tab_2" class="nav-link tab-icon"  data-toggle="tab"> Chat
+                    </a>
+            </li>
+            <li class="nav-item">
+                <a href="#quick_sidebar_tab_3" class="nav-link tab-icon"  data-toggle="tab">  Settings
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane chat-sidebar-settings in show active animated shake" role="tabpanel" id="quick_sidebar_tab_1">
+                <div class="slimscroll-style">
+                    <div class="theme-light-dark">
+                        <h6>Sidebar Theme</h6>
+                        <button type="button" data-theme="white" class="btn lightColor btn-outline btn-circle m-b-10 theme-button">Light Sidebar</button>
+                        <button type="button" data-theme="dark" class="btn dark btn-outline btn-circle m-b-10 theme-button">Dark Sidebar</button>
+                    </div>
+                    <div class="theme-light-dark">
+                        <h6>Sidebar Color</h6>
+                        <ul class="list-unstyled">
+                            <li class="complete">
+                                <div class="theme-color sidebar-theme">
+                                    <a href="javascript:;" data-theme="white"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="dark"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="blue"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="indigo"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="cyan"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="green"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="red"><span class="head"></span><span class="cont"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <h6>Header Brand color</h6>
+                        <ul class="list-unstyled">
+                            <li class="theme-option">
+                                <div class="theme-color logo-theme">
+                                     <a href="javascript:;" data-theme="logo-white"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="logo-dark"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="logo-blue"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="logo-indigo"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="logo-cyan"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="logo-green"><span class="head"></span><span class="cont"></span></a>
+                                    <a href="javascript:;" data-theme="logo-red"><span class="head"></span><span class="cont"></span></a>
+                                   </div>
+                            </li>
+                        </ul>
+                        <h6>Header color</h6>
+                        <ul class="list-unstyled">
+                            <li class="theme-option">
+                                <div class="theme-color header-theme">
+                                     <a href="javascript:;" data-theme="header-white"><span class="head"></span><span class="cont"></span></a>
+                                     <a href="javascript:;" data-theme="header-dark"><span class="head"></span><span class="cont"></span></a>
+                                     <a href="javascript:;" data-theme="header-blue"><span class="head"></span><span class="cont"></span></a>
+                                     <a href="javascript:;" data-theme="header-indigo"><span class="head"></span><span class="cont"></span></a>
+                                     <a href="javascript:;" data-theme="header-cyan"><span class="head"></span><span class="cont"></span></a>
+                                     <a href="javascript:;" data-theme="header-green"><span class="head"></span><span class="cont"></span></a>
+                                     <a href="javascript:;" data-theme="header-red"><span class="head"></span><span class="cont"></span></a>
+                                  </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Doctor Chat --> 
+             <div class="tab-pane chat-sidebar-chat animated slideInRight" id="quick_sidebar_tab_2">
+                <div class="chat-sidebar-list">
+                    <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd" data-wrapper-class="chat-sidebar-list">
+                        <div class="chat-header"><h5 class="list-heading">Online</h5></div>
+                        <ul class="media-list list-items">
+                            <li class="media"><img class="media-object" src="assets/img/user/user3.jpg" width="35" height="35" alt="...">
+                                <i class="online dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">John Deo</h5>
+                                    <div class="media-heading-sub">Spine Surgeon</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-status">
+                                    <span class="badge badge-success">5</span>
+                                </div> <img class="media-object" src="assets/img/user/user1.jpg" width="35" height="35" alt="...">
+                                <i class="busy dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Rajesh</h5>
+                                    <div class="media-heading-sub">Director</div>
+                                </div>
+                            </li>
+                            <li class="media"><img class="media-object" src="assets/img/user/user5.jpg" width="35" height="35" alt="...">
+                                <i class="away dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Jacob Ryan</h5>
+                                    <div class="media-heading-sub">Ortho Surgeon</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-status">
+                                    <span class="badge badge-danger">8</span>
+                                </div> <img class="media-object" src="assets/img/user/user4.jpg" width="35" height="35" alt="...">
+                                <i class="online dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Kehn Anderson</h5>
+                                    <div class="media-heading-sub">CEO</div>
+                                </div>
+                            </li>
+                            <li class="media"><img class="media-object" src="assets/img/user/user2.jpg" width="35" height="35" alt="...">
+                                <i class="busy dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Sarah Smith</h5>
+                                    <div class="media-heading-sub">Anaesthetics</div>
+                                </div>
+                            </li>
+                            <li class="media"><img class="media-object" src="assets/img/user/user7.jpg" width="35" height="35" alt="...">
+                                <i class="online dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Vlad Cardella</h5>
+                                    <div class="media-heading-sub">Cardiologist</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="chat-header"><h5 class="list-heading">Offline</h5></div>
+                        <ul class="media-list list-items">
+                            <li class="media">
+                                <div class="media-status">
+                                    <span class="badge badge-warning">4</span>
+                                </div> <img class="media-object" src="assets/img/user/user6.jpg" width="35" height="35" alt="...">
+                                <i class="offline dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Jennifer Maklen</h5>
+                                    <div class="media-heading-sub">Nurse</div>
+                                    <div class="media-heading-small">Last seen 01:20 AM</div>
+                                </div>
+                            </li>
+                            <li class="media"><img class="media-object" src="assets/img/user/user8.jpg" width="35" height="35" alt="...">
+                                <i class="offline dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Lina Smith</h5>
+                                    <div class="media-heading-sub">Ortho Surgeon</div>
+                                    <div class="media-heading-small">Last seen 11:14 PM</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-status">
+                                    <span class="badge badge-success">9</span>
+                                </div> <img class="media-object" src="assets/img/user/user9.jpg" width="35" height="35" alt="...">
+                                <i class="offline dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Jeff Adam</h5>
+                                    <div class="media-heading-sub">Compounder</div>
+                                    <div class="media-heading-small">Last seen 3:31 PM</div>
+                                </div>
+                            </li>
+                            <li class="media"><img class="media-object" src="assets/img/user/user10.jpg" width="35" height="35" alt="...">
+                                <i class="offline dot"></i>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Anjelina Cardella</h5>
+                                    <div class="media-heading-sub">Physiotherapist</div>
+                                    <div class="media-heading-small">Last seen 7:45 PM</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chat-sidebar-item">
+                    <div class="chat-sidebar-chat-user">
+                        <div class="page-quick-sidemenu">
+                            <a href="javascript:;" class="chat-sidebar-back-to-list">
+                                <i class="fa fa-angle-double-left"></i>Back
+                            </a>
+                        </div>
+                        <div class="chat-sidebar-chat-user-messages">
+                            <div class="post out">
+                                <img class="avatar" alt="" src="assets/img/dp.jpg" />
+                                <div class="message">
+                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:10</span>
+                                    <span class="body-out"> could you send me menu icons ? </span>
+                                </div>
+                            </div>
+                            <div class="post in">
+                                <img class="avatar" alt="" src="assets/img/user/user5.jpg" />
+                                <div class="message">
+                                    <span class="arrow"></span> <a href="javascript:;" class="name">Jacob Ryan</a> <span class="datetime">9:10</span>
+                                    <span class="body"> please give me 10 minutes. </span>
+                                </div>
+                            </div>
+                            <div class="post out">
+                                <img class="avatar" alt="" src="assets/img/dp.jpg" />
+                                <div class="message">
+                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:11</span>
+                                    <span class="body-out"> ok fine :) </span>
+                                </div>
+                            </div>
+                            <div class="post in">
+                                <img class="avatar" alt="" src="assets/img/user/user5.jpg" />
+                                <div class="message">
+                                    <span class="arrow"></span> <a href="javascript:;" class="name">Jacob Ryan</a> <span class="datetime">9:22</span>
+                                    <span class="body">Sorry for
+                                        the delay. i sent mail to you. let me know if it is ok or not.</span>
+                                </div>
+                            </div>
+                            <div class="post out">
+                                <img class="avatar" alt="" src="assets/img/dp.jpg" />
+                                <div class="message">
+                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:26</span>
+                                    <span class="body-out"> it is perfect! :) </span>
+                                </div>
+                            </div>
+                            <div class="post out">
+                                <img class="avatar" alt="" src="assets/img/dp.jpg" />
+                                <div class="message">
+                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:26</span>
+                                    <span class="body-out"> Great! Thanks. </span>
+                                </div>
+                            </div>
+                            <div class="post in">
+                                <img class="avatar" alt="" src="assets/img/user/user5.jpg" />
+                                <div class="message">
+                                    <span class="arrow"></span> <a href="javascript:;" class="name">Jacob Ryan</a> <span class="datetime">9:27</span>
+                                    <span class="body"> it is my pleasure :) </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-sidebar-chat-user-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Type a message here...">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn deepPink-bgcolor">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Doctor Chat --> 
+             <!-- Start Setting Panel --> 
+             <div class="tab-pane chat-sidebar-settings animated slideInUp" id="quick_sidebar_tab_3">
+                <div class="chat-sidebar-settings-list slimscroll-style">
+                    <div class="chat-header"><h5 class="list-heading">Layout Settings</h5></div>
+                    <div class="chatpane inner-content ">
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <div class="setting-text">Sidebar Position</div>
+                                <div class="setting-set">
+                                   <select class="sidebar-pos-option form-control input-inline input-sm input-small ">
+                                        <option value="left" selected="selected">Left</option>
+                                        <option value="right">Right</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">Header</div>
+                                <div class="setting-set">
+                                   <select class="page-header-option form-control input-inline input-sm input-small ">
+                                        <option value="fixed" selected="selected">Fixed</option>
+                                        <option value="default">Default</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">Sidebar Menu </div>
+                                <div class="setting-set">
+                                   <select class="sidebar-menu-option form-control input-inline input-sm input-small ">
+                                        <option value="accordion" selected="selected">Accordion</option>
+                                        <option value="hover">Hover</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">Footer</div>
+                                <div class="setting-set">
+                                   <select class="page-footer-option form-control input-inline input-sm input-small ">
+                                        <option value="fixed">Fixed</option>
+                                        <option value="default" selected="selected">Default</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-header"><h5 class="list-heading">Account Settings</h5></div>
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <div class="setting-text">Notifications</div>
+                                <div class="setting-set">
+                                    <div class="switch">
+                                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                                          for = "switch-1">
+                                          <input type = "checkbox" id = "switch-1" 
+                                             class = "mdl-switch__input" checked>
+                                           </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">Show Online</div>
+                                <div class="setting-set">
+                                    <div class="switch">
+                                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                                          for = "switch-7">
+                                          <input type = "checkbox" id = "switch-7" 
+                                             class = "mdl-switch__input" checked>
+                                           </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">Status</div>
+                                <div class="setting-set">
+                                    <div class="switch">
+                                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                                          for = "switch-2">
+                                          <input type = "checkbox" id = "switch-2" 
+                                             class = "mdl-switch__input" checked>
+                                           </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">2 Steps Verification</div>
+                                <div class="setting-set">
+                                    <div class="switch">
+                                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                                          for = "switch-3">
+                                          <input type = "checkbox" id = "switch-3" 
+                                             class = "mdl-switch__input" checked>
+                                           </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-header"><h5 class="list-heading">General Settings</h5></div>
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <div class="setting-text">Location</div>
+                                <div class="setting-set">
+                                    <div class="switch">
+                                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                                          for = "switch-4">
+                                          <input type = "checkbox" id = "switch-4" 
+                                             class = "mdl-switch__input" checked>
+                                           </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">Save Histry</div>
+                                <div class="setting-set">
+                                    <div class="switch">
+                                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                                          for = "switch-5">
+                                          <input type = "checkbox" id = "switch-5" 
+                                             class = "mdl-switch__input" checked>
+                                           </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-text">Auto Updates</div>
+                                <div class="setting-set">
+                                    <div class="switch">
+                                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                                          for = "switch-6">
+                                          <input type = "checkbox" id = "switch-6" 
+                                             class = "mdl-switch__input" checked>
+                                           </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+=======
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
   </div>
   <!-- end chat sidebar -->
   
