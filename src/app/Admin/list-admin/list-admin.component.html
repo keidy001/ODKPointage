@@ -205,7 +205,15 @@
 												</a>
 												<ul class="dropdown-menu pull-right">
 													<li>
+<<<<<<< HEAD
 														<a (click)="imprimerPdf()">
+=======
+<<<<<<< HEAD
+														<a (click)="imprimerPdf()">
+=======
+														<a onclick="window.print()">
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
+>>>>>>> 0ffe7f28ad1fc09f6c9089ad1e55dc0542972b9f
 															<i class="fa fa-print"></i> Imprimer </a>
 													</li>
 													<li>
@@ -240,8 +248,8 @@
 												<th class="center"> Téléphone </th>
 												<th class="center"> Email </th>
 												<th class="center">Profile</th>
-												<th class="center">Etat</th>
-												<th class="center"> Action </th>
+												<th class="etat">Etat</th>
+												<th class="action"> Action </th>
 											</tr>
 										</thead>
 										<tbody >
@@ -255,9 +263,10 @@
 												<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.email}}</span></td>
 												<td class="center"><span routerLink="/detailAdmin/{{admin.id}}">{{admin.profile.libelle}}</span></td>
 												<td class="center">
-													<span class="label label-sm label-success">{{admin.etat}} </span>
+													<span class="label label-sm label-success" >{{admin.etat}} </span>
+                                                    
 												</td>
-												<td class="center">
+												<td class="td">
 													<a  class="btn btn-tbl-edit btn-xs" routerLink="/updateAdmin/{{admin.id}}">
 														<i class="fa fa-pencil"></i>
 													</a>
@@ -268,7 +277,16 @@
 											</tr>
 
 										
-											
+											<script>                                               
+                                              function printContent(el){                                               
+                                                        var restorepage = document.body.innerHTML;                                 
+                                                        var printcontent = document.getElementById(el).innerHTML;                                                    
+                                                         document.body.innerHTML = printcontent;                                                    
+                                                          window.print();                                                     
+                                                          document.body.innerHTML = restorepage;                                               
+                                                            }                                                 
+                                              </script>
+
 											
 										</tbody>
 									</table>

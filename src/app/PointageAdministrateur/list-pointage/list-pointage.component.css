@@ -1,6 +1,24 @@
 .card:hover{
+<<<<<<< HEAD
 cursor: pointer;
 }
 input{
     width: 140px;
+<<<<<<< HEAD
 }
+=======
+}
+=======
+    cursor: pointer;
+    }
+    input{
+        width: 140px;
+    }
+    
+    @media  print {
+        .etat, .action, .col-lg-3, .md-form, .head,  .col-md-6 {
+            visibility: hidden;
+        }
+    }
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
+>>>>>>> 0ffe7f28ad1fc09f6c9089ad1e55dc0542972b9f

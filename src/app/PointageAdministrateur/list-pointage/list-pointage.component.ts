@@ -16,11 +16,25 @@ export class ListPointageComponent implements OnInit {
   date : any;
   loginData :any
   fileName = "listeAdmin.xlsx";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  searchText : any
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
+>>>>>>> 0ffe7f28ad1fc09f6c9089ad1e55dc0542972b9f
   constructor(
     private serviceAdmin: UsersService,
     private datepipe: DatePipe,
     private router:Router,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0ffe7f28ad1fc09f6c9089ad1e55dc0542972b9f
     
+=======
+
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
     ) { }
 
   ngOnInit(): void {
@@ -45,8 +59,8 @@ listSemaine(date:any){
   this.serviceAdmin.listParSemaine(date).subscribe((result)=>
   { 
     return this.listPointage=result;
-  
-  
+
+
   })
   }
   listMois(date:any){
@@ -54,8 +68,8 @@ listSemaine(date:any){
     this.serviceAdmin.listParMois(date).subscribe((result)=>
     { console.log(this.date);
       return this.listPointage=result;
-    
-    
+
+
     })
     }
 
@@ -69,6 +83,10 @@ listSemaine(date:any){
      /* table id is passed over here */
      let element = document.getElementById('example4'); 
      const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0ffe7f28ad1fc09f6c9089ad1e55dc0542972b9f
   
      // generate workbook and add the worksheet 
      const wb: XLSX.WorkBook = XLSX.utils.book_new();
@@ -79,6 +97,21 @@ listSemaine(date:any){
   
   }
   
+<<<<<<< HEAD
+=======
+=======
+
+     // generate workbook and add the worksheet 
+     const wb: XLSX.WorkBook = XLSX.utils.book_new();
+     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+     // save to file 
+     XLSX.writeFile(wb, this.fileName);
+
+  }
+
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
+>>>>>>> 0ffe7f28ad1fc09f6c9089ad1e55dc0542972b9f
   downloadPdf(){
     var element  = document.getElementById('example4')!
     html2canvas(element).then(
@@ -92,5 +125,13 @@ listSemaine(date:any){
       }
     )
   }
+<<<<<<< HEAD
   
+=======
+<<<<<<< HEAD
+  
+=======
+
+>>>>>>> 368b21bd76ce5c7832f661e6cf897db3841a7165
+>>>>>>> 0ffe7f28ad1fc09f6c9089ad1e55dc0542972b9f
 }
