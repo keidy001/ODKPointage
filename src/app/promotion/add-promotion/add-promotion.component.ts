@@ -49,5 +49,8 @@ export class AddPromotionComponent implements OnInit {
       }
     )
   }
-
+  logOut(){
+    localStorage.removeItem('isLogin');
+  this.router.navigateByUrl('/');
+}
 }

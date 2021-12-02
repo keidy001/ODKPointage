@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -8,12 +9,18 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LogParUtilisateurComponent implements OnInit {
   logUtilisateur :any
+  loginData : any;
   id=1;
   acteur="UTILISATEUR";
+  searchText:any;
 
-  constructor(private service: UsersService) { }
+  constructor(
+    private service: UsersService,
+    private router:Router,
+    ) { }
 
   ngOnInit(): void {
+    this.loginData=JSON.parse(localStorage["isLogin"]);
     this.logParUtilisateur();
   }
   logParUtilisateur(){
@@ -25,5 +32,8 @@ export class LogParUtilisateurComponent implements OnInit {
     })
     
   }
-
+  logOut(){
+    localStorage.removeItem('isLogin');
+  this.router.navigateByUrl('/');
+}
 }

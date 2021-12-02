@@ -41,6 +41,9 @@ export class UpdateAdminComponent implements OnInit {
   }
 
 
-
+  logOut(){
+    localStorage.removeItem('isLogin');
+  this.router.navigateByUrl('/');
+}
 
 }

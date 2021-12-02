@@ -15,5 +15,8 @@ loginData : any;
     this.loginData = JSON.parse(localStorage["isLogin"]);
     console.log(this.loginData);
   }
-
+  logOut(){
+    localStorage.removeItem('isLogin');
+  this.router.navigateByUrl('/');
+}
 }
