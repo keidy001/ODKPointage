@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -15,66 +15,43 @@ export class AddUsersComponent implements OnInit {
   // id: any;
   // chaine : string;
   loginData: any;
-
-  prenom: any;
-  nom: any;
-  email:any;
-  genre:any;
-  telephone:any;
-  password:any;
-  Type:any;
-  adresse:any;
-  promotion:any;
-  etat:any;
+  userngForm: NgForm;
+  formuser: FormGroup;
   login:any;
   promotions:any;
 
+  submitted = false;
   constructor(
     private service : UsersService, 
     private router : Router,
     public  route: ActivatedRoute,
+    public formBulder: FormBuilder
 
   ) { }
 
   ngOnInit(): void {
     this.loginData=JSON.parse(localStorage["isLogin"]);
     this.promotions = this.afficherPromotions();
+
+
+    this.formuser = this.formBulder.group({
+
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      genre: ['', Validators.required],
+      adresse: ['', Validators.required],
+      login: ['', Validators.required],
+      profile: ['', Validators.required],
+      telephone: ['', Validators.required],
+      etat: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      motDePass: ['', [Validators.required, Validators.minLength(6)]],
+      
+
+      //confirmPassword: ['', Validators.required],
+      //acceptTerms: [false, Validators.requiredTrue] //Checkbox For accept conditions 
+  },);
     
-
-  }
-  test(){
-
-  }
-  ajouterUsers(){
-   
- 
-    let userData = {
-          prenom : this.prenom,
-          nom: this.nom,
-          email: this.email,
-          genre: this.genre,
-          telephone:this.telephone,
-          motDePass:this.password,
-          Type:this.Type,
-          adresse:this.adresse,
-          promotion:{
-            id:this.promotion
-          },
-          etat:this.etat,
-          login:this.login,
-          userId:this.loginData.id
-
-    }
-   
-    this.service.addUsers(userData).subscribe(
-      (data)=>{
-        this.router.navigateByUrl("listUsers");
-        console.log("hello world" +data);
-       
-        
-        
-      }
-    )
 
   }
 
@@ -87,6 +64,43 @@ export class AddUsersComponent implements OnInit {
       }
     )
   }
+
+
+
+  get f() { return this.formuser.controls; }
+
+
+
+
+  ajouter_user(fg : FormGroup){
+    this.submitted = true;
+    
+
+
+    // stop here if form is invalid
+    if (this.formuser.invalid) {
+        return;
+    }
+
+    var obj: { [id: string]: any} = {};
+     
+    obj.id = fg.value.profile; 
+    fg.value.profile = obj;
+    fg.value.userId =this.loginData.id
+     
+   console.log(JSON.stringify(fg.value));
+
+   this.service.addAdmin(fg.value).subscribe(
+     
+     (data)=>{
+       this.router.navigateByUrl("/listUsers");
+     
+       console.log("hello world" +data);         
+     }
+   )
+    
+  }
+
   logOut(){
     localStorage.removeItem('isLogin');
   this.router.navigateByUrl('/');

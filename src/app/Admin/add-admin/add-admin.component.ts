@@ -96,7 +96,7 @@ export class AddAdminComponent implements OnInit {
 
 
 
-  hello(fg : FormGroup){
+  ajouter_admin(fg : FormGroup){
     this.submitted = true;
     
 
